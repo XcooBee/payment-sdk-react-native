@@ -1,0 +1,19 @@
+{
+  "rootDir": ".",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "moduleFileExtensions": [
+    "ts",
+    "js"
+  ],
+  "moduleNameMapper": {},
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  },
+  "transformIgnorePatterns": [
+    "/node_modules/"
+  ],
+  "testEnvironment": "node"
+}
