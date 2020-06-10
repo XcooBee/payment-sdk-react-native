@@ -1,10 +1,26 @@
-declare type PayUrlProps = {
-  amount: number;
-  reference?: string;
-  tax?: number;
-  config?: any;
-  tip?: boolean;
-};
+declare interface IXcooBeePay {
+  /* tslint:disable:max-line-length */
+  setSystemConfig(config: XcooBeePayConfig): void;
+
+  clearSystemConfig(): void;
+
+  createPayUrl(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
+
+  createPayUrlWithTip(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
+
+  createSingleItemUrl(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
+
+  createSingleSelectUrl(amount: number, arrayOfItems: string[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
+
+  createSingleSelectWithCostUrl(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
+
+  createMultiSelectUrl(amount: number, arrayOfItems: string[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
+
+  createMultiSelectUrlWithCost(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
+
+  createExternalReferenceURL(reference: string, config?: XcooBeePayConfig): string;
+  /* tslint:enable:max-line-length */
+}
 
 declare type XcooBeePayConfig = {
   /**
@@ -29,4 +45,78 @@ declare type XcooBeePayConfig = {
    * XcooBeeDeviceId will be used.
    */
   XcooBeeDeviceId?: string;
-}
+};
+
+declare type PayUrlProps = {
+  /**
+   * Number to pay for order.
+   */
+  amount: number;
+  /**
+   * Description of order.
+   */
+  reference?: string | null;
+  /**
+   * Included tax.
+   */
+  tax?: number | null;
+  /**
+   * Forced config.
+   */
+  config?: XcooBeePayConfig;
+  /**
+   * Include tip.
+   */
+  tip?: boolean;
+};
+
+type SecurePayLogicSubSet = {
+  [0]: string;
+  [1]: number;
+};
+
+declare type SecurePayLogic = {
+  a: 1; // addMinOrFixed
+  m: number;
+  o: number;
+  r: string;
+} | {
+  a: 2; // addMaxOrFixed
+  M: number;
+  o: number;
+  r: string;
+} | {
+  a: 3; // addSubRadio
+  r: string[];
+} | {
+  a: 4; // addSubRadioWithExtraCost
+  r: SecurePayLogicSubSet[];
+} | {
+  a: 5; // addSubCheckbox
+  r: string[];
+} | {
+  a: 6; // addSubCheckboxWithExtraCost
+  r: SecurePayLogicSubSet[];
+} | {
+  a: 7; // setTip
+} | {
+  a: 8; // externalPricing
+  r: SecurePayExternalPricing;
+} | {
+  a: 9; // userEntry
+} | {
+  a: 10; // setTotal
+};
+
+declare type SecurePay = {
+  readonly '0-3'?: number;
+  readonly '0-5'?: number;
+  readonly '0-6'?: string;
+  // readonly l?: SecurePayLogic[];
+  readonly 'l'?: SecurePayLogic[];
+};
+
+declare type QuickPaySubItem = {
+  amount: number;
+  reference: string;
+};

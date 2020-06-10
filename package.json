@@ -26,7 +26,10 @@
     "babel-preset-react-native": "^4.0.1",
     "jest": "^26.0.1",
     "ts-jest": "^26.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "tslint": "5.14.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0"
   },
   "peerDependencies": {
     "react": "~16.9.0",
