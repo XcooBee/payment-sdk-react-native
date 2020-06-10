@@ -1,9 +1,11 @@
-declare interface IXcooBeePay {
-  /* tslint:disable:max-line-length */
+declare interface XcooBeePayBase {
   setSystemConfig(config: XcooBeePayConfig): void;
 
   clearSystemConfig(): void;
+}
 
+declare interface XcooBeePayUrl {
+  /* tslint:disable:max-line-length */
   createPayUrl(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
 
   createPayUrlWithTip(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
@@ -18,7 +20,29 @@ declare interface IXcooBeePay {
 
   createMultiSelectUrlWithCost(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): string;
 
-  createExternalReferenceURL(reference: string, config?: XcooBeePayConfig): string;
+  createExternalReferenceUrl(reference: string, config?: XcooBeePayConfig): string;
+
+  /* tslint:enable:max-line-length */
+}
+
+declare interface XcooBeePayQR<T> {
+  /* tslint:disable:max-line-length */
+  createPayQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+
+  createPayQRWithTip(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+
+  createSingleItemQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+
+  createSingleSelectQR(amount: number, arrayOfItems: string[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+
+  createSingleSelectWithCostQR(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+
+  createMultiSelectQR(amount: number, arrayOfItems: string[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+
+  createMultiSelectQRWithCost(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+
+  createExternalReferenceQR(reference: string, config?: XcooBeePayConfig): T;
+
   /* tslint:enable:max-line-length */
 }
 

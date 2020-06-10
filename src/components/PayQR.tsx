@@ -1,10 +1,18 @@
 import * as React from 'react';
-import { View } from 'react-native';
+import QRCode from 'react-native-qrcode-svg';
 
-export type Props = {};
+export type Props = Omit<React.ComponentProps<typeof QRCode>, 'value'> & {
+  amount: number;
+};
 
-export const PayQR: React.FC<Props> = () => {
+export const PayQR: React.FC<Props> = ({
+  amount,
+  ...componentProps
+}) => {
   return (
-    <View/>
+    <QRCode
+      value=""
+      {...componentProps}
+    />
   );
 };
