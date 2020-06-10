@@ -1,6 +1,5 @@
 import * as React from 'react';
 import QueryString from 'query-string';
-import QRCode from 'react-native-qrcode-svg';
 
 import {
   MAX_DATA_LENGTH,
@@ -12,13 +11,10 @@ import {
   SecurePayParams,
   WEB_SITE_URL
 } from './Shared';
+import { createQR } from './QR';
 
-export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.ReactElement> {
+class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.ReactElement> {
   private config?: XcooBeePayConfig;
-
-  constructor(config?: XcooBeePayConfig) {
-    this.config = config;
-  }
 
   private checkConfig(config?: XcooBeePayConfig) {
     if (!config) {
@@ -128,14 +124,6 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
         item.reference.substring(0, MAX_SUB_ITEMS_REF_LENGTH),
         item.amount
       ]);
-  }
-
-  private createQR(value: string): React.ReactElement {
-    return (
-      <QRCode
-        value={value}
-      />
-    );
   }
 
   /**
@@ -314,7 +302,7 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
     tax?: number | null,
     config?: XcooBeePayConfig
   ): React.ReactElement {
-    return this.createQR(this.createPayUrl(amount, reference, tax, config));
+    return createQR(this.createPayUrl(amount, reference, tax, config));
   }
 
   public createPayQRWithTip(
@@ -323,7 +311,7 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
     tax?: number | null,
     config?: XcooBeePayConfig
   ): React.ReactElement {
-    return this.createQR(this.createPayUrlWithTip(amount, reference, tax, config));
+    return createQR(this.createPayUrlWithTip(amount, reference, tax, config));
   }
 
   public createSingleItemQR(
@@ -332,7 +320,7 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
     tax?: number | null,
     config?: XcooBeePayConfig
   ): React.ReactElement {
-    return this.createQR(this.createSingleItemUrl(amount, reference, tax, config));
+    return createQR(this.createSingleItemUrl(amount, reference, tax, config));
   }
 
   public createSingleSelectQR(
@@ -342,7 +330,7 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
     tax?: number | null,
     config?: XcooBeePayConfig
   ): React.ReactElement {
-    return this.createQR(this.createSingleSelectUrl(amount, arrayOfItems, reference, tax, config));
+    return createQR(this.createSingleSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
 
   public createSingleSelectWithCostQR(
@@ -352,7 +340,7 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
     tax?: number | null,
     config?: XcooBeePayConfig
   ): React.ReactElement {
-    return this.createQR(this.createSingleSelectWithCostUrl(amount, arrayOfItems, reference, tax, config));
+    return createQR(this.createSingleSelectWithCostUrl(amount, arrayOfItems, reference, tax, config));
   }
 
   public createMultiSelectQR(
@@ -362,7 +350,7 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
     tax?: number | null,
     config?: XcooBeePayConfig
   ): React.ReactElement {
-    return this.createQR(this.createMultiSelectUrl(amount, arrayOfItems, reference, tax, config));
+    return createQR(this.createMultiSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
 
   public createMultiSelectQRWithCost(
@@ -372,11 +360,11 @@ export class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<R
     tax?: number | null,
     config?: XcooBeePayConfig
   ): React.ReactElement {
-    return this.createQR(this.createMultiSelectUrlWithCost(amount, arrayOfItems, reference, tax, config));
+    return createQR(this.createMultiSelectUrlWithCost(amount, arrayOfItems, reference, tax, config));
   }
 
   public createExternalReferenceQR(reference: string, config?: XcooBeePayConfig): React.ReactElement {
-    return this.createQR(this.createExternalReferenceUrl(reference, config));
+    return createQR(this.createExternalReferenceUrl(reference, config));
   }
 }
 
