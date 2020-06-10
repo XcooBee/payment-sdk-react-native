@@ -7,7 +7,7 @@ import {
   MAX_SOURCE_LENGTH,
   MAX_SUB_ITEMS_AMOUNT,
   MAX_SUB_ITEMS_REF_LENGTH,
-  QuickPayActions,
+  QuickPayActions, QuickPayParams,
   SecurePayParams,
   WEB_SITE_URL
 } from './Shared';
@@ -86,17 +86,21 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     const source = (config!.source || '').substring(0, MAX_SOURCE_LENGTH);
 
     const deviceId = !!config!.XcooBeeDeviceId ? {
-      did: xcoobeeDeviceId || undefined
+      [QuickPayParams.XcooBeeDeviceId]: xcoobeeDeviceId || undefined
     } : {
-      ed: externalDeviceId || undefined
+      [QuickPayParams.ExternalDeviceId]: externalDeviceId || undefined
     };
 
     if (dataBase64.length > MAX_DATA_LENGTH) {
-      console.warn('Base64 encoded parameter \"d\" is bigger than', MAX_DATA_LENGTH);
+      console.warn('Data parameter encoded to Base64 is bigger than', MAX_DATA_LENGTH);
     }
 
-    if ((deviceId.did || deviceId.ed || '').length > MAX_DEVICE_ID_LENGTH) {
-      console.warn('Device id parameter is bigger than', MAX_DEVICE_ID_LENGTH);
+    if ((deviceId[QuickPayParams.XcooBeeDeviceId] || '').length > MAX_DEVICE_ID_LENGTH) {
+      console.warn('XcooBeeDeviceId parameter is bigger than', MAX_DEVICE_ID_LENGTH);
+    }
+
+    if ((deviceId[QuickPayParams.ExternalDeviceId] || '').length > MAX_DEVICE_ID_LENGTH) {
+      console.warn('ExternalDeviceId parameter is bigger than', MAX_DEVICE_ID_LENGTH);
     }
 
     if ((source || '').length > MAX_SOURCE_LENGTH) {
@@ -104,21 +108,21 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     }
 
     return QueryString.stringifyUrl({
-      url: `${WEB_SITE_URL}/securePay/${config!.campaignId}/${this.config!.formId}`,
+      url: `${WEB_SITE_URL}/securePay/${config!.campaignId}/${config!.formId}`,
       query: {
-        d: dataBase64.substring(0, MAX_DATA_LENGTH),
-        s: source || undefined,
+        [QuickPayParams.Data]: dataBase64.substring(0, MAX_DATA_LENGTH),
+        [QuickPayParams.Source]: source || undefined,
         ...deviceId,
       }
     });
   }
 
-  private mapSubItems(items: string[]): string[] {
+  private mapSubItems(items: QuickPaySubItem[]): string[] {
     return items.filter((v, i) => i < MAX_SUB_ITEMS_AMOUNT)
-      .map((item) => item.substring(0, MAX_SUB_ITEMS_REF_LENGTH));
+      .map((item) => item.reference.substring(0, MAX_SUB_ITEMS_REF_LENGTH));
   }
 
-  private mapSubItemsWithCost(items: QuickPaySubItem[]): SecurePayLogicSubSet[] {
+  private mapSubItemsWithCost(items: QuickPaySubItemWithCost[]): SecurePayLogicSubSet[] {
     return items.filter((v, i) => i < MAX_SUB_ITEMS_AMOUNT)
       .map((item) => [
         item.reference.substring(0, MAX_SUB_ITEMS_REF_LENGTH),
@@ -189,7 +193,10 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     const securePayItem = this.makeSecurePayItem({
       amount,
       reference,
-      tax
+      tax,
+      logic: [{
+        a: QuickPayActions.userEntry
+      }]
     });
 
     return this.makePayUrl([securePayItem], config);
@@ -197,7 +204,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createSingleSelectUrl(
     amount: number,
-    arrayOfItems: string[],
+    arrayOfItems: QuickPaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -217,10 +224,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createSingleSelectWithCostUrl(
     amount: number,
-    arrayOfItems: Array<{
-      reference: string;
-      amount: number;
-    }>,
+    arrayOfItems: QuickPaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -240,7 +244,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createMultiSelectUrl(
     amount: number,
-    arrayOfItems: string[],
+    arrayOfItems: QuickPaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -260,10 +264,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createMultiSelectUrlWithCost(
     amount: number,
-    arrayOfItems: Array<{
-      reference: string;
-      amount: number;
-    }>,
+    arrayOfItems: QuickPaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -325,7 +326,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createSingleSelectQR(
     amount: number,
-    arrayOfItems: string[],
+    arrayOfItems: QuickPaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -335,7 +336,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createSingleSelectWithCostQR(
     amount: number,
-    arrayOfItems: QuickPaySubItem[],
+    arrayOfItems: QuickPaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -345,7 +346,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createMultiSelectQR(
     amount: number,
-    arrayOfItems: string[],
+    arrayOfItems: QuickPaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -355,7 +356,7 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
 
   public createMultiSelectQRWithCost(
     amount: number,
-    arrayOfItems: QuickPaySubItem[],
+    arrayOfItems: QuickPaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig

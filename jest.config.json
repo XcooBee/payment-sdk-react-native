@@ -1,19 +1,27 @@
 {
+  "setupFiles": [
+    "<rootDir>/enzyme.config.js"
+  ],
   "rootDir": ".",
   "moduleDirectories": [
     "node_modules",
     "src"
   ],
   "moduleFileExtensions": [
+    "js",
     "ts",
-    "js"
+    "json",
+    "tsx"
   ],
   "moduleNameMapper": {},
   "transform": {
-    "^.+\\.ts$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest"
   },
-  "transformIgnorePatterns": [
+  "testPathIgnorePatterns": [
     "/node_modules/"
   ],
-  "testEnvironment": "node"
+  "transformIgnorePatterns": [
+    "<rootDir>/node_modules/"
+  ],
+  "testEnvironment": "jsdom"
 }
