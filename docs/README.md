@@ -1,3 +1,7 @@
+[@xcoobee/react-native-xcoobee-payment-sdk](README.md) › [Globals](globals.md)
+
+# @xcoobee/react-native-xcoobee-payment-sdk
+
 # XcooBee Payment SDK for React Native
 
 ### Installation
@@ -56,4 +60,4 @@ export default function App() {
 
 ### Documentation
 
-To overview documentation please follow [documentation link](./docs/globals.md). 
+To overview documentation please follow [documentation link](./docs/index.html).
