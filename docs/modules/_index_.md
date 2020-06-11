@@ -87,6 +87,6 @@ ___
 
 • **XcooBeePay**: *[XcooBeePaySDK](../classes/_xcoobeepay_.xcoobeepaysdk.md)‹›* = new XcooBeePaySDK(XcooBeePayQR)
 
-*Defined in [index.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/index.ts#L7)*
 
 Single instance of XcooBeePaySDK.

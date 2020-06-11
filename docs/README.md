@@ -60,4 +60,4 @@ export default function App() {
 
 ### Documentation
 
-To overview documentation please follow [documentation link](./docs/index.html).
+To overview documentation please follow [documentation link](./docs/globals.md).

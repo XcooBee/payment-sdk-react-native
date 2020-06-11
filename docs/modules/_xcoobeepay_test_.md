@@ -15,7 +15,7 @@
 
 • **campaignId**: *"f98.eg6152508"* = "f98.eg6152508"
 
-*Defined in [XcooBeePay.test.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.test.ts#L7)*
+*Defined in [XcooBeePay.test.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.test.ts#L7)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **formId**: *"v025"* = "v025"
 
-*Defined in [XcooBeePay.test.ts:8](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.test.ts#L8)*
+*Defined in [XcooBeePay.test.ts:8](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.test.ts#L8)*

@@ -56,7 +56,7 @@
 
 \+ **new XcooBeePaySDK**(`qrRenderer?`: [QRRenderer](../modules/_types_.md#qrrenderer)): *[XcooBeePaySDK](_xcoobeepay_.xcoobeepaysdk.md)*
 
-*Defined in [XcooBeePay.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L33)*
+*Defined in [XcooBeePay.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L33)*
 
 **Parameters:**
 
@@ -72,7 +72,7 @@ Name | Type |
 
 • **config**? : *[XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)*
 
-*Defined in [XcooBeePay.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L33)*
+*Defined in [XcooBeePay.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L33)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **renderQR**: *[QRRenderer](../modules/_types_.md#qrrenderer)*
 
-*Defined in [XcooBeePay.ts:32](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L32)*
+*Defined in [XcooBeePay.ts:32](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L32)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **checkConfig**(`config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *boolean*
 
-*Defined in [XcooBeePay.ts:39](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L39)*
+*Defined in [XcooBeePay.ts:39](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L39)*
 
 **Parameters:**
 
@@ -106,7 +106,7 @@ ___
 
 *Implementation of [XcooBeePayBase](../interfaces/_types_.xcoobeepaybase.md)*
 
-*Defined in [XcooBeePay.ts:164](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L164)*
+*Defined in [XcooBeePay.ts:164](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L164)*
 
 **Returns:** *void*
 
@@ -118,7 +118,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:510](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L510)*
+*Defined in [XcooBeePay.ts:510](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L510)*
 
 **Parameters:**
 
@@ -138,7 +138,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:356](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L356)*
+*Defined in [XcooBeePay.ts:356](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L356)*
 
 **Parameters:**
 
@@ -157,7 +157,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:473](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L473)*
+*Defined in [XcooBeePay.ts:473](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L473)*
 
 **Parameters:**
 
@@ -180,7 +180,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:493](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L493)*
+*Defined in [XcooBeePay.ts:493](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L493)*
 
 **Parameters:**
 
@@ -203,7 +203,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:303](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L303)*
+*Defined in [XcooBeePay.ts:303](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L303)*
 
 **Parameters:**
 
@@ -225,7 +225,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:331](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L331)*
+*Defined in [XcooBeePay.ts:331](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L331)*
 
 **Parameters:**
 
@@ -247,7 +247,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:378](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L378)*
+*Defined in [XcooBeePay.ts:378](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L378)*
 
 **Parameters:**
 
@@ -269,7 +269,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:396](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L396)*
+*Defined in [XcooBeePay.ts:396](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L396)*
 
 **Parameters:**
 
@@ -291,7 +291,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:176](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L176)*
+*Defined in [XcooBeePay.ts:176](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L176)*
 
 **Parameters:**
 
@@ -312,7 +312,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:198](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L198)*
+*Defined in [XcooBeePay.ts:198](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L198)*
 
 **Parameters:**
 
@@ -333,7 +333,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:414](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L414)*
+*Defined in [XcooBeePay.ts:414](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L414)*
 
 **Parameters:**
 
@@ -355,7 +355,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:221](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L221)*
+*Defined in [XcooBeePay.ts:221](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L221)*
 
 **Parameters:**
 
@@ -376,7 +376,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:433](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L433)*
+*Defined in [XcooBeePay.ts:433](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L433)*
 
 **Parameters:**
 
@@ -399,7 +399,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:247](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L247)*
+*Defined in [XcooBeePay.ts:247](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L247)*
 
 **Parameters:**
 
@@ -421,7 +421,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:453](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L453)*
+*Defined in [XcooBeePay.ts:453](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L453)*
 
 **Parameters:**
 
@@ -444,7 +444,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:275](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L275)*
+*Defined in [XcooBeePay.ts:275](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L275)*
 
 **Parameters:**
 
@@ -464,7 +464,7 @@ ___
 
 ▸ **makePayUrl**(`securePay`: [SecurePay](../modules/_types_.md#securepay)[], `forcedConfig?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [XcooBeePay.ts:97](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L97)*
+*Defined in [XcooBeePay.ts:97](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L97)*
 
 **Parameters:**
 
@@ -481,7 +481,7 @@ ___
 
 ▸ **makeSecurePayItem**(`params`: object): *[SecurePay](../modules/_types_.md#securepay)*
 
-*Defined in [XcooBeePay.ts:55](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L55)*
+*Defined in [XcooBeePay.ts:55](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L55)*
 
 **Parameters:**
 
@@ -502,7 +502,7 @@ ___
 
 ▸ **makeSecurePayItemTotal**(`params`: [SecurePayItem](../modules/_types_.md#securepayitem)): *[SecurePay](../modules/_types_.md#securepay)[]*
 
-*Defined in [XcooBeePay.ts:78](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L78)*
+*Defined in [XcooBeePay.ts:78](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L78)*
 
 **Parameters:**
 
@@ -518,7 +518,7 @@ ___
 
 ▸ **mapSubItems**(`items`: [SecurePaySubItem](../modules/_types_.md#securepaysubitem)[]): *string[]*
 
-*Defined in [XcooBeePay.ts:140](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L140)*
+*Defined in [XcooBeePay.ts:140](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L140)*
 
 **Parameters:**
 
@@ -534,7 +534,7 @@ ___
 
 ▸ **mapSubItemsWithCost**(`items`: [SecurePaySubItemWithCost](../modules/_types_.md#securepaysubitemwithcost)[]): *[SecurePayLogicSubSet](../modules/_types_.md#securepaylogicsubset)[]*
 
-*Defined in [XcooBeePay.ts:145](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L145)*
+*Defined in [XcooBeePay.ts:145](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L145)*
 
 **Parameters:**
 
@@ -552,7 +552,7 @@ ___
 
 *Implementation of [XcooBeePayBase](../interfaces/_types_.xcoobeepaybase.md)*
 
-*Defined in [XcooBeePay.ts:157](https://github.com/XcooBee/payment-sdk-react-native/blob/b11bdcd/src/XcooBeePay.ts#L157)*
+*Defined in [XcooBeePay.ts:157](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/XcooBeePay.ts#L157)*
 
 **Parameters:**
 

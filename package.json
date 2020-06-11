@@ -1,6 +1,6 @@
 {
   "name": "@xcoobee/react-native-xcoobee-payment-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "XcooBee SDK module that provides functionality for XcooBee payment.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
     "compile": "tsc",
     "build": "tsc && yarn assets",
     "assets": "copyfiles -u 1 src/assets/images/* dist/",
-    "docs": "typedoc --out docs src"
+    "docs": "typedoc src"
   },
   "repository": {
     "type": "git",
