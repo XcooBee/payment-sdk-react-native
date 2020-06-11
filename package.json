@@ -1,5 +1,5 @@
 {
-  "name": "react-native-xcoobee-payment-sdk",
+  "name": "@xcoobee/react-native-xcoobee-payment-sdk",
   "version": "1.0.0",
   "description": "XcooBee SDK module that provides functionality for XcooBee payment.",
   "main": "dist/index.js",
