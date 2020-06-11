@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const WEB_SITE_URL = 'https://app.xcoobee.net';
 
 export enum QuickPayActions {
@@ -32,3 +34,5 @@ export const MAX_SOURCE_LENGTH = 10;
 export const MAX_DATA_LENGTH = 1800;
 export const MAX_SUB_ITEMS_AMOUNT = 25;
 export const MAX_SUB_ITEMS_REF_LENGTH = 40;
+
+export type QRRenderer = (value: string, props?: any) => React.ReactElement | null;

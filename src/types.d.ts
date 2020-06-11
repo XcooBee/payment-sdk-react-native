@@ -27,21 +27,21 @@ declare interface XcooBeePayUrl {
 
 declare interface XcooBeePayQR<T> {
   /* tslint:disable:max-line-length */
-  createPayQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+  createPayQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
 
-  createPayQRWithTip(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+  createPayQRWithTip(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
 
-  createSingleItemQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+  createSingleItemQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
 
-  createSingleSelectQR(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+  createSingleSelectQR(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
 
-  createSingleSelectWithCostQR(amount: number, arrayOfItems: QuickPaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+  createSingleSelectWithCostQR(amount: number, arrayOfItems: QuickPaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
 
-  createMultiSelectQR(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+  createMultiSelectQR(amount: number, arrayOfItems: QuickPaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
 
-  createMultiSelectQRWithCost(amount: number, arrayOfItems: QuickPaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T;
+  createMultiSelectQRWithCost(amount: number, arrayOfItems: QuickPaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
 
-  createExternalReferenceQR(reference: string, config?: XcooBeePayConfig): T;
+  createExternalReferenceQR(reference: string, config?: XcooBeePayConfig): T | null;
 
   /* tslint:enable:max-line-length */
 }
@@ -144,6 +144,6 @@ declare type QuickPaySubItem = {
   reference: string;
 };
 
-declare type QuickPaySubItemWithCost = Pick<QuickPaySubItem> & {
+declare type QuickPaySubItemWithCost = Required<QuickPaySubItem> & {
   amount: number;
 };

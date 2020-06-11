@@ -7,14 +7,20 @@ import {
   MAX_SOURCE_LENGTH,
   MAX_SUB_ITEMS_AMOUNT,
   MAX_SUB_ITEMS_REF_LENGTH,
-  QuickPayActions, QuickPayParams,
+  QRRenderer,
+  QuickPayActions,
+  QuickPayParams,
   SecurePayParams,
   WEB_SITE_URL
 } from './Shared';
-import { createQR } from './QR';
 
-class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.ReactElement> {
+export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.ReactElement> {
   private config?: XcooBeePayConfig;
+  private renderQR: QRRenderer;
+
+  constructor(qrRenderer?: QRRenderer) {
+    this.renderQR = qrRenderer || (() => null);
+  }
 
   private checkConfig(config?: XcooBeePayConfig) {
     if (!config) {
@@ -287,7 +293,6 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     config?: XcooBeePayConfig
   ): string {
     const securePayItem = this.makeSecurePayItem({
-      reference,
       logic: [{
         a: QuickPayActions.externalPricing,
         r: reference
@@ -302,8 +307,8 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
-  ): React.ReactElement {
-    return createQR(this.createPayUrl(amount, reference, tax, config));
+  ): React.ReactElement | null {
+    return this.renderQR(this.createPayUrl(amount, reference, tax, config));
   }
 
   public createPayQRWithTip(
@@ -311,8 +316,8 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
-  ): React.ReactElement {
-    return createQR(this.createPayUrlWithTip(amount, reference, tax, config));
+  ): React.ReactElement | null {
+    return this.renderQR(this.createPayUrlWithTip(amount, reference, tax, config));
   }
 
   public createSingleItemQR(
@@ -320,8 +325,8 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
-  ): React.ReactElement {
-    return createQR(this.createSingleItemUrl(amount, reference, tax, config));
+  ): React.ReactElement | null {
+    return this.renderQR(this.createSingleItemUrl(amount, reference, tax, config));
   }
 
   public createSingleSelectQR(
@@ -330,8 +335,8 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
-  ): React.ReactElement {
-    return createQR(this.createSingleSelectUrl(amount, arrayOfItems, reference, tax, config));
+  ): React.ReactElement | null {
+    return this.renderQR(this.createSingleSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
 
   public createSingleSelectWithCostQR(
@@ -340,8 +345,8 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
-  ): React.ReactElement {
-    return createQR(this.createSingleSelectWithCostUrl(amount, arrayOfItems, reference, tax, config));
+  ): React.ReactElement | null {
+    return this.renderQR(this.createSingleSelectWithCostUrl(amount, arrayOfItems, reference, tax, config));
   }
 
   public createMultiSelectQR(
@@ -350,8 +355,8 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
-  ): React.ReactElement {
-    return createQR(this.createMultiSelectUrl(amount, arrayOfItems, reference, tax, config));
+  ): React.ReactElement | null {
+    return this.renderQR(this.createMultiSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
 
   public createMultiSelectQRWithCost(
@@ -360,13 +365,14 @@ class XcooBeePay implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.Re
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
-  ): React.ReactElement {
-    return createQR(this.createMultiSelectUrlWithCost(amount, arrayOfItems, reference, tax, config));
+  ): React.ReactElement | null {
+    return this.renderQR(this.createMultiSelectUrlWithCost(amount, arrayOfItems, reference, tax, config));
   }
 
-  public createExternalReferenceQR(reference: string, config?: XcooBeePayConfig): React.ReactElement {
-    return createQR(this.createExternalReferenceUrl(reference, config));
+  public createExternalReferenceQR(
+    reference: string,
+    config?: XcooBeePayConfig
+  ): React.ReactElement | null {
+    return this.renderQR(this.createExternalReferenceUrl(reference, config));
   }
 }
-
-export default new XcooBeePay();

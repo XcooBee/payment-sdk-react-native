@@ -1,10 +1,20 @@
 import QueryString from 'query-string';
 
-import { QuickPayActions, SecurePayParams, WEB_SITE_URL } from './Shared';
-import XcooBeePay from './XcooBeePay';
+import XcooBeePay, { QuickPayActions, SecurePayParams, WEB_SITE_URL } from './';
 
 const campaignId = 'f98.eg6152508';
 const formId = 'v025';
+
+beforeEach(() => {
+  XcooBeePay.setSystemConfig({
+    campaignId: 'f98.eg6152508',
+    formId: 'v025'
+  });
+});
+
+afterEach(() => {
+  XcooBeePay.clearSystemConfig();
+});
 
 describe('Testing createPayUrl()', () => {
   beforeEach(() => {
@@ -29,7 +39,7 @@ describe('Testing createPayUrl()', () => {
     const payUrl = XcooBeePay.createPayUrl(12.34);
 
     const dataJson = QueryString.parseUrl(payUrl).query['d'] as string;
-    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString()) as SecurePay;
+    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString());
 
     expect(data)
       .toEqual([{
@@ -129,17 +139,6 @@ describe('Testing createPayUrl()', () => {
 });
 
 describe('Test createPayUrlWithTip', () => {
-  beforeEach(() => {
-    XcooBeePay.setSystemConfig({
-      campaignId: 'f98.eg6152508',
-      formId: 'v025'
-    });
-  });
-
-  afterEach(() => {
-    XcooBeePay.clearSystemConfig();
-  });
-
   it('Test query parameter \"amount\" with Tip.', () => {
     const payUrl = XcooBeePay.createPayUrlWithTip(12.34);
 
@@ -171,6 +170,156 @@ describe('Test createPayUrlWithTip', () => {
       }, {
         [SecurePayParams.Reference]: 'Tip',
         [SecurePayParams.Logic]: [{ a: QuickPayActions.setTip }]
+      }]);
+  });
+});
+
+describe('Testing createSingleItemUrl()', () => {
+  it('Test with amount', () => {
+    const payUrl = XcooBeePay.createSingleItemUrl(12.34);
+
+    const dataJson = QueryString.parseUrl(payUrl).query['d'] as string;
+    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString()) as SecurePay;
+
+    expect(data)
+      .toEqual([{
+        [SecurePayParams.Amount]: 12.34,
+        [SecurePayParams.Logic]: [{ a: QuickPayActions.userEntry }]
+      }]);
+  });
+});
+
+describe('Testing createSingleSelectUrl()', () => {
+  it('Test with amount and five sub items', () => {
+    const subItems: QuickPaySubItem[] = [
+      { reference: 'One' },
+      { reference: 'Two' },
+      { reference: 'Three' },
+      { reference: 'Four' },
+      { reference: 'Five' },
+    ];
+
+    const payUrl = XcooBeePay.createSingleSelectUrl(12.34, subItems);
+
+    const dataJson = QueryString.parseUrl(payUrl).query['d'] as string;
+    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString()) as SecurePay;
+
+    expect(data)
+      .toEqual([{
+        [SecurePayParams.Amount]: 12.34,
+        [SecurePayParams.Logic]: [{
+          a: QuickPayActions.addSubRadio,
+          r: ['One', 'Two', 'Three', 'Four', 'Five']
+        }]
+      }]);
+  });
+});
+
+describe('Testing createSingleSelectWithCostUrl()', () => {
+  it('Test with amount and five sub items with price', () => {
+    const subItems: QuickPaySubItemWithCost[] = [
+      { reference: 'One', amount: 5 },
+      { reference: 'Two', amount: 4 },
+      { reference: 'Three', amount: 3 },
+      { reference: 'Four', amount: 2 },
+      { reference: 'Five', amount: 1 },
+    ];
+
+    const payUrl = XcooBeePay.createSingleSelectWithCostUrl(12.34, subItems);
+
+    const dataJson = QueryString.parseUrl(payUrl).query['d'] as string;
+    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString()) as SecurePay;
+
+    expect(data)
+      .toEqual([{
+        [SecurePayParams.Amount]: 12.34,
+        [SecurePayParams.Logic]: [{
+          a: QuickPayActions.addSubRadioWithExtraCost,
+          r: [
+            ['One', 5],
+            ['Two', 4],
+            ['Three', 3],
+            ['Four', 2],
+            ['Five', 1]
+          ]
+        }]
+      }]);
+  });
+});
+
+describe('Testing createMultiSelectUrl()', () => {
+  it('Test with amount and five sub items', () => {
+    const subItems: QuickPaySubItem[] = [
+      { reference: 'One' },
+      { reference: 'Two' },
+      { reference: 'Three' },
+      { reference: 'Four' },
+      { reference: 'Five' },
+    ];
+
+    const payUrl = XcooBeePay.createMultiSelectUrl(12.34, subItems);
+
+    const dataJson = QueryString.parseUrl(payUrl).query['d'] as string;
+    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString()) as SecurePay;
+
+    expect(data)
+      .toEqual([{
+        [SecurePayParams.Amount]: 12.34,
+        [SecurePayParams.Logic]: [{
+          a: QuickPayActions.addSubCheckbox,
+          r: ['One', 'Two', 'Three', 'Four', 'Five']
+        }]
+      }]);
+  });
+});
+
+describe('Testing createMultiSelectUrlWithCost()', () => {
+  it('Test with amount and five sub items with price', () => {
+    const subItems: QuickPaySubItemWithCost[] = [
+      { reference: 'One', amount: 5 },
+      { reference: 'Two', amount: 4 },
+      { reference: 'Three', amount: 3 },
+      { reference: 'Four', amount: 2 },
+      { reference: 'Five', amount: 1 },
+    ];
+
+    const payUrl = XcooBeePay.createMultiSelectUrlWithCost(12.34, subItems);
+
+    const dataJson = QueryString.parseUrl(payUrl).query['d'] as string;
+    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString()) as SecurePay;
+
+    expect(data)
+      .toEqual([{
+        [SecurePayParams.Amount]: 12.34,
+        [SecurePayParams.Logic]: [{
+          a: QuickPayActions.addSubCheckboxWithExtraCost,
+          r: [
+            ['One', 5],
+            ['Two', 4],
+            ['Three', 3],
+            ['Four', 2],
+            ['Five', 1]
+          ]
+        }]
+      }]);
+  });
+});
+
+describe('Testing createExternalReferenceUrl()', () => {
+  it('Test with external price', () => {
+    const externalReference = 'shoe';
+
+    const payUrl = XcooBeePay.createExternalReferenceUrl(externalReference);
+
+    const dataJson = QueryString.parseUrl(payUrl).query['d'] as string;
+    const data = JSON.parse(Buffer.from(dataJson, 'base64').toString()) as SecurePay;
+
+    expect(data)
+      .toEqual([{
+        [SecurePayParams.Logic]: [{
+          a: QuickPayActions.externalPricing,
+          r: externalReference
+        }]
       }]);
   });
 });
