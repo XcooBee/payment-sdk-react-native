@@ -26,16 +26,16 @@ with Expo:
 
 with NPM: 
 
-`npm install react-native-xcoobee-payment-sdk`
+`npm install @xcoobee/react-native-xcoobee-payment-sdk`
 
 with Yarn:
 
-`yarn add react-native-xcoobee-payment-sdk`
+`yarn add @xcoobee/react-native-xcoobee-payment-sdk`
 
 ### Using
 
 ```
-import XcooBeePaySDK from 'react-native-xcoobee-payment-sdk';
+import XcooBeePaySDK from '@xcoobee/react-native-xcoobee-payment-sdk';
 
 XcooBeePaySDK.setSystemConfig({
   campaignId: 'a00.aa0000000',
