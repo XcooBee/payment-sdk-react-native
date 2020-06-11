@@ -1,6 +1,8 @@
+import { Buffer } from 'buffer';
 import QueryString from 'query-string';
 
-import XcooBeePay, { QuickPayActions, SecurePayParams, WEB_SITE_URL } from './';
+import XcooBeePay, { SecurePayItemActions, SecurePayItemParams, WEB_SITE_URL } from './';
+import { SecurePay, SecurePaySubItem, SecurePaySubItemWithCost } from './types';
 
 const campaignId = 'f98.eg6152508';
 const formId = 'v025';
@@ -43,8 +45,8 @@ describe('Testing createPayUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Logic]: [{ a: 10 }]
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Logic]: [{ a: 10 }]
       }]);
   });
 
@@ -56,9 +58,9 @@ describe('Testing createPayUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Reference]: 'Green Apple',
-        [SecurePayParams.Logic]: [{ a: 10 }]
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Reference]: 'Green Apple',
+        [SecurePayItemParams.Logic]: [{ a: 10 }]
       }]);
   });
 
@@ -70,10 +72,10 @@ describe('Testing createPayUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Tax]: 1.234,
-        [SecurePayParams.Reference]: 'Green Apple',
-        [SecurePayParams.Logic]: [{ a: 10 }]
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Tax]: 1.234,
+        [SecurePayItemParams.Reference]: 'Green Apple',
+        [SecurePayItemParams.Logic]: [{ a: 10 }]
       }]);
   });
 
@@ -147,11 +149,11 @@ describe('Test createPayUrlWithTip', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Logic]: [{ a: QuickPayActions.setTotal }]
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Logic]: [{ a: SecurePayItemActions.setTotal }]
       }, {
-        [SecurePayParams.Reference]: 'Tip',
-        [SecurePayParams.Logic]: [{ a: QuickPayActions.setTip }]
+        [SecurePayItemParams.Reference]: 'Tip',
+        [SecurePayItemParams.Logic]: [{ a: SecurePayItemActions.setTip }]
       }]);
   });
 
@@ -163,13 +165,13 @@ describe('Test createPayUrlWithTip', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Tax]: 1.23,
-        [SecurePayParams.Reference]: 'Green Apple',
-        [SecurePayParams.Logic]: [{ a: QuickPayActions.setTotal }]
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Tax]: 1.23,
+        [SecurePayItemParams.Reference]: 'Green Apple',
+        [SecurePayItemParams.Logic]: [{ a: SecurePayItemActions.setTotal }]
       }, {
-        [SecurePayParams.Reference]: 'Tip',
-        [SecurePayParams.Logic]: [{ a: QuickPayActions.setTip }]
+        [SecurePayItemParams.Reference]: 'Tip',
+        [SecurePayItemParams.Logic]: [{ a: SecurePayItemActions.setTip }]
       }]);
   });
 });
@@ -183,15 +185,15 @@ describe('Testing createSingleItemUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Logic]: [{ a: QuickPayActions.userEntry }]
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Logic]: [{ a: SecurePayItemActions.userEntry }]
       }]);
   });
 });
 
 describe('Testing createSingleSelectUrl()', () => {
   it('Test with amount and five sub items', () => {
-    const subItems: QuickPaySubItem[] = [
+    const subItems: SecurePaySubItem[] = [
       { reference: 'One' },
       { reference: 'Two' },
       { reference: 'Three' },
@@ -206,9 +208,9 @@ describe('Testing createSingleSelectUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Logic]: [{
-          a: QuickPayActions.addSubRadio,
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Logic]: [{
+          a: SecurePayItemActions.addSubRadio,
           r: ['One', 'Two', 'Three', 'Four', 'Five']
         }]
       }]);
@@ -217,7 +219,7 @@ describe('Testing createSingleSelectUrl()', () => {
 
 describe('Testing createSingleSelectWithCostUrl()', () => {
   it('Test with amount and five sub items with price', () => {
-    const subItems: QuickPaySubItemWithCost[] = [
+    const subItems: SecurePaySubItemWithCost[] = [
       { reference: 'One', amount: 5 },
       { reference: 'Two', amount: 4 },
       { reference: 'Three', amount: 3 },
@@ -232,9 +234,9 @@ describe('Testing createSingleSelectWithCostUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Logic]: [{
-          a: QuickPayActions.addSubRadioWithExtraCost,
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Logic]: [{
+          a: SecurePayItemActions.addSubRadioWithExtraCost,
           r: [
             ['One', 5],
             ['Two', 4],
@@ -249,7 +251,7 @@ describe('Testing createSingleSelectWithCostUrl()', () => {
 
 describe('Testing createMultiSelectUrl()', () => {
   it('Test with amount and five sub items', () => {
-    const subItems: QuickPaySubItem[] = [
+    const subItems: SecurePaySubItem[] = [
       { reference: 'One' },
       { reference: 'Two' },
       { reference: 'Three' },
@@ -264,9 +266,9 @@ describe('Testing createMultiSelectUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Logic]: [{
-          a: QuickPayActions.addSubCheckbox,
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Logic]: [{
+          a: SecurePayItemActions.addSubCheckbox,
           r: ['One', 'Two', 'Three', 'Four', 'Five']
         }]
       }]);
@@ -275,7 +277,7 @@ describe('Testing createMultiSelectUrl()', () => {
 
 describe('Testing createMultiSelectUrlWithCost()', () => {
   it('Test with amount and five sub items with price', () => {
-    const subItems: QuickPaySubItemWithCost[] = [
+    const subItems: SecurePaySubItemWithCost[] = [
       { reference: 'One', amount: 5 },
       { reference: 'Two', amount: 4 },
       { reference: 'Three', amount: 3 },
@@ -290,9 +292,9 @@ describe('Testing createMultiSelectUrlWithCost()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Amount]: 12.34,
-        [SecurePayParams.Logic]: [{
-          a: QuickPayActions.addSubCheckboxWithExtraCost,
+        [SecurePayItemParams.Amount]: 12.34,
+        [SecurePayItemParams.Logic]: [{
+          a: SecurePayItemActions.addSubCheckboxWithExtraCost,
           r: [
             ['One', 5],
             ['Two', 4],
@@ -316,8 +318,8 @@ describe('Testing createExternalReferenceUrl()', () => {
 
     expect(data)
       .toEqual([{
-        [SecurePayParams.Logic]: [{
-          a: QuickPayActions.externalPricing,
+        [SecurePayItemParams.Logic]: [{
+          a: SecurePayItemActions.externalPricing,
           r: externalReference
         }]
       }]);

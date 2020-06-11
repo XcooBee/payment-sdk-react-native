@@ -1,5 +1,6 @@
 import * as React from 'react';
 import QueryString from 'query-string';
+import { Buffer } from 'buffer';
 
 import {
   MAX_DATA_LENGTH,
@@ -8,15 +9,27 @@ import {
   MAX_SUB_ITEMS_AMOUNT,
   MAX_SUB_ITEMS_REF_LENGTH,
   QRRenderer,
-  QuickPayActions,
-  QuickPayParams,
+  SecurePayItemActions,
+  SecurePayItemParams,
   SecurePayParams,
   WEB_SITE_URL
 } from './Shared';
+import {
+  SecurePay,
+  SecurePayItem,
+  SecurePayLogic,
+  SecurePayLogicSubSet,
+  SecurePaySubItem,
+  SecurePaySubItemWithCost,
+  XcooBeePayBase,
+  XcooBeePayConfig,
+  XcooBeePayQR,
+  XcooBeePayUrl
+} from './types';
 
 export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQR<React.ReactElement> {
+  private readonly renderQR: QRRenderer;
   private config?: XcooBeePayConfig;
-  private renderQR: QRRenderer;
 
   constructor(qrRenderer?: QRRenderer) {
     this.renderQR = qrRenderer || (() => null);
@@ -45,10 +58,10 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     logic?: SecurePayLogic[];
   }): SecurePay {
     return Object.entries({
-      [SecurePayParams.Amount]: params.amount,
-      [SecurePayParams.Reference]: params.reference,
-      [SecurePayParams.Tax]: params.tax,
-      [SecurePayParams.Logic]: params.logic
+      [SecurePayItemParams.Amount]: params.amount,
+      [SecurePayItemParams.Reference]: params.reference,
+      [SecurePayItemParams.Tax]: params.tax,
+      [SecurePayItemParams.Logic]: params.logic
     }).reduce((acc, item) => {
       if (item[1] !== undefined && item[1] !== null) {
         return {
@@ -61,19 +74,19 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     }, {});
   }
 
-  private makeSecurePayItemTotal(params: Omit<PayUrlProps, 'config'>): SecurePay[] {
+  private makeSecurePayItemTotal(params: SecurePayItem): SecurePay[] {
     const payload = this.makeSecurePayItem({
       amount: params.amount,
       reference: params.reference,
       tax: params.tax,
-      logic: [{ a: QuickPayActions.setTotal }]
+      logic: [{ a: SecurePayItemActions.setTotal }]
     });
 
     return params.tip ? [
       payload,
       this.makeSecurePayItem({
         reference: 'Tip',
-        logic: [{ a: QuickPayActions.setTip }]
+        logic: [{ a: SecurePayItemActions.setTip }]
       })
     ] : [
       payload
@@ -92,20 +105,20 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     const source = (config!.source || '').substring(0, MAX_SOURCE_LENGTH);
 
     const deviceId = !!config!.XcooBeeDeviceId ? {
-      [QuickPayParams.XcooBeeDeviceId]: xcoobeeDeviceId || undefined
+      [SecurePayParams.XcooBeeDeviceId]: xcoobeeDeviceId || undefined
     } : {
-      [QuickPayParams.ExternalDeviceId]: externalDeviceId || undefined
+      [SecurePayParams.ExternalDeviceId]: externalDeviceId || undefined
     };
 
     if (dataBase64.length > MAX_DATA_LENGTH) {
       console.warn('Data parameter encoded to Base64 is bigger than', MAX_DATA_LENGTH);
     }
 
-    if ((deviceId[QuickPayParams.XcooBeeDeviceId] || '').length > MAX_DEVICE_ID_LENGTH) {
+    if ((deviceId[SecurePayParams.XcooBeeDeviceId] || '').length > MAX_DEVICE_ID_LENGTH) {
       console.warn('XcooBeeDeviceId parameter is bigger than', MAX_DEVICE_ID_LENGTH);
     }
 
-    if ((deviceId[QuickPayParams.ExternalDeviceId] || '').length > MAX_DEVICE_ID_LENGTH) {
+    if ((deviceId[SecurePayParams.ExternalDeviceId] || '').length > MAX_DEVICE_ID_LENGTH) {
       console.warn('ExternalDeviceId parameter is bigger than', MAX_DEVICE_ID_LENGTH);
     }
 
@@ -116,19 +129,19 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return QueryString.stringifyUrl({
       url: `${WEB_SITE_URL}/securePay/${config!.campaignId}/${config!.formId}`,
       query: {
-        [QuickPayParams.Data]: dataBase64.substring(0, MAX_DATA_LENGTH),
-        [QuickPayParams.Source]: source || undefined,
+        [SecurePayParams.Data]: dataBase64.substring(0, MAX_DATA_LENGTH),
+        [SecurePayParams.Source]: source || undefined,
         ...deviceId,
       }
     });
   }
 
-  private mapSubItems(items: QuickPaySubItem[]): string[] {
+  private mapSubItems(items: SecurePaySubItem[]): string[] {
     return items.filter((v, i) => i < MAX_SUB_ITEMS_AMOUNT)
       .map((item) => item.reference.substring(0, MAX_SUB_ITEMS_REF_LENGTH));
   }
 
-  private mapSubItemsWithCost(items: QuickPaySubItemWithCost[]): SecurePayLogicSubSet[] {
+  private mapSubItemsWithCost(items: SecurePaySubItemWithCost[]): SecurePayLogicSubSet[] {
     return items.filter((v, i) => i < MAX_SUB_ITEMS_AMOUNT)
       .map((item) => [
         item.reference.substring(0, MAX_SUB_ITEMS_REF_LENGTH),
@@ -174,6 +187,13 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.makePayUrl(securePay, config);
   }
 
+  /**
+   *
+   * @param amount
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createPayUrlWithTip(
     amount: number,
     reference?: string | null,
@@ -190,6 +210,13 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.makePayUrl(securePay, config);
   }
 
+  /**
+   *
+   * @param amount
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createSingleItemUrl(
     amount: number,
     reference?: string | null,
@@ -201,16 +228,24 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
       reference,
       tax,
       logic: [{
-        a: QuickPayActions.userEntry
+        a: SecurePayItemActions.userEntry
       }]
     });
 
     return this.makePayUrl([securePayItem], config);
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createSingleSelectUrl(
     amount: number,
-    arrayOfItems: QuickPaySubItem[],
+    arrayOfItems: SecurePaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -220,7 +255,7 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
       reference,
       tax,
       logic: [{
-        a: QuickPayActions.addSubRadio,
+        a: SecurePayItemActions.addSubRadio,
         r: this.mapSubItems(arrayOfItems)
       }]
     });
@@ -228,9 +263,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.makePayUrl([securePayItem], config);
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createSingleSelectWithCostUrl(
     amount: number,
-    arrayOfItems: QuickPaySubItemWithCost[],
+    arrayOfItems: SecurePaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -240,7 +283,7 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
       reference,
       tax,
       logic: [{
-        a: QuickPayActions.addSubRadioWithExtraCost,
+        a: SecurePayItemActions.addSubRadioWithExtraCost,
         r: this.mapSubItemsWithCost(arrayOfItems)
       }]
     });
@@ -248,9 +291,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.makePayUrl([securePayItem], config);
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createMultiSelectUrl(
     amount: number,
-    arrayOfItems: QuickPaySubItem[],
+    arrayOfItems: SecurePaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -260,7 +311,7 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
       reference,
       tax,
       logic: [{
-        a: QuickPayActions.addSubCheckbox,
+        a: SecurePayItemActions.addSubCheckbox,
         r: this.mapSubItems(arrayOfItems)
       }]
     });
@@ -268,9 +319,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.makePayUrl([securePayItem], config);
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createMultiSelectUrlWithCost(
     amount: number,
-    arrayOfItems: QuickPaySubItemWithCost[],
+    arrayOfItems: SecurePaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -280,7 +339,7 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
       reference,
       tax,
       logic: [{
-        a: QuickPayActions.addSubCheckboxWithExtraCost,
+        a: SecurePayItemActions.addSubCheckboxWithExtraCost,
         r: this.mapSubItemsWithCost(arrayOfItems)
       }]
     });
@@ -288,13 +347,18 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.makePayUrl([securePayItem], config);
   }
 
+  /**
+   *
+   * @param reference
+   * @param config
+   */
   public createExternalReferenceUrl(
     reference: string,
     config?: XcooBeePayConfig
   ): string {
     const securePayItem = this.makeSecurePayItem({
       logic: [{
-        a: QuickPayActions.externalPricing,
+        a: SecurePayItemActions.externalPricing,
         r: reference
       }]
     });
@@ -302,6 +366,13 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.makePayUrl([securePayItem], config);
   }
 
+  /**
+   *
+   * @param amount
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createPayQR(
     amount: number,
     reference?: string | null,
@@ -311,6 +382,13 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.renderQR(this.createPayUrl(amount, reference, tax, config));
   }
 
+  /**
+   *
+   * @param amount
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createPayQRWithTip(
     amount: number,
     reference?: string | null,
@@ -320,6 +398,13 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.renderQR(this.createPayUrlWithTip(amount, reference, tax, config));
   }
 
+  /**
+   *
+   * @param amount
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createSingleItemQR(
     amount: number,
     reference?: string | null,
@@ -329,9 +414,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.renderQR(this.createSingleItemUrl(amount, reference, tax, config));
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createSingleSelectQR(
     amount: number,
-    arrayOfItems: QuickPaySubItem[],
+    arrayOfItems: SecurePaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -339,9 +432,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.renderQR(this.createSingleSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createSingleSelectWithCostQR(
     amount: number,
-    arrayOfItems: QuickPaySubItemWithCost[],
+    arrayOfItems: SecurePaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -349,9 +450,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.renderQR(this.createSingleSelectWithCostUrl(amount, arrayOfItems, reference, tax, config));
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createMultiSelectQR(
     amount: number,
-    arrayOfItems: QuickPaySubItem[],
+    arrayOfItems: SecurePaySubItem[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -359,9 +468,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.renderQR(this.createMultiSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
 
+  /**
+   *
+   * @param amount
+   * @param arrayOfItems
+   * @param reference
+   * @param tax
+   * @param config
+   */
   public createMultiSelectQRWithCost(
     amount: number,
-    arrayOfItems: QuickPaySubItemWithCost[],
+    arrayOfItems: SecurePaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
     config?: XcooBeePayConfig
@@ -369,6 +486,11 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     return this.renderQR(this.createMultiSelectUrlWithCost(amount, arrayOfItems, reference, tax, config));
   }
 
+  /**
+   *
+   * @param reference
+   * @param config
+   */
   public createExternalReferenceQR(
     reference: string,
     config?: XcooBeePayConfig

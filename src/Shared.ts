@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const WEB_SITE_URL = 'https://app.xcoobee.net';
-
-export enum QuickPayActions {
+/**
+ * Quick Pay actions.
+ */
+export enum SecurePayItemActions {
   addMinOrFixed = 1,
   addMaxOrFixed = 2,
   addSubRadio = 3,
@@ -15,24 +16,34 @@ export enum QuickPayActions {
   setTotal = 10,
 }
 
-export enum SecurePayParams {
+/**
+ * Secure Pay url params
+ */
+export enum SecurePayItemParams {
   Amount = '0-3',
   Tax = '0-5',
   Reference = '0-6',
   Logic = 'l'
 }
 
-export enum QuickPayParams {
+/**
+ *
+ */
+export enum SecurePayParams {
   Data = 'd',
   Source = 's',
   XcooBeeDeviceId = 'did',
   ExternalDeviceId = 'ed',
 }
 
+export const WEB_SITE_URL = 'https://app.xcoobee.net';
 export const MAX_DEVICE_ID_LENGTH = 200;
 export const MAX_SOURCE_LENGTH = 10;
 export const MAX_DATA_LENGTH = 1800;
 export const MAX_SUB_ITEMS_AMOUNT = 25;
 export const MAX_SUB_ITEMS_REF_LENGTH = 40;
 
+/**
+ * Function that creates QR Code component based on parameters.
+ */
 export type QRRenderer = (value: string, props?: any) => React.ReactElement | null;
