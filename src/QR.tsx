@@ -13,6 +13,6 @@ export const XcooBeePayQR: QRRenderer = (value, qrConfig = {}): React.ReactEleme
   <QRCode
     value={value}
     size={qrConfig.size ?? 150}
-    logo={require('./assets/xcoobee-logo.png')}
+    logo={require('./assets/images/xcoobee-logo.png')}
   />
 );

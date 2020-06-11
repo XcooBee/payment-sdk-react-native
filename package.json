@@ -8,8 +8,9 @@
     "test": "jest ./",
     "testw": "jest ./ --watchAll",
     "compile": "tsc",
-    "build": "yarn && yarn compile && typedoc --out docs src",
-    "cleanup": "rm -rf node_modules yarn.lock dist docs"
+    "build": "tsc && yarn assets",
+    "assets": "copyfiles -u 1 src/assets/images/* dist/",
+    "docs": "typedoc --out docs src"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "@types/react": "~16.9.23",
     "@types/react-native": "~0.61.17",
     "babel-preset-react-native": "^5.0.2",
+    "copyfiles": "^2.3.0",
     "jest": "^26.0.1",
     "react-dom": "16.13.1",
     "ts-jest": "^26.1.0",
