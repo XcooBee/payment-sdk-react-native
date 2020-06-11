@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface XcooBeePayBase {
   setSystemConfig(config: XcooBeePayConfig): void;
 
@@ -27,21 +29,21 @@ export interface XcooBeePayUrl {
 
 export interface XcooBeePayQR<T> {
   /* tslint:disable:max-line-length */
-  createPayQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
+  createPayQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
-  createPayQRWithTip(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
+  createPayQRWithTip(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
-  createSingleItemQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
+  createSingleItemQR(amount: number, reference?: string | null, tax?: number | null, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
-  createSingleSelectQR(amount: number, arrayOfItems: SecurePaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
+  createSingleSelectQR(amount: number, arrayOfItems: SecurePaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
-  createSingleSelectWithCostQR(amount: number, arrayOfItems: SecurePaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
+  createSingleSelectWithCostQR(amount: number, arrayOfItems: SecurePaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
-  createMultiSelectQR(amount: number, arrayOfItems: SecurePaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
+  createMultiSelectQR(amount: number, arrayOfItems: SecurePaySubItem[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
-  createMultiSelectQRWithCost(amount: number, arrayOfItems: SecurePaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig): T | null;
+  createMultiSelectQRWithCost(amount: number, arrayOfItems: SecurePaySubItemWithCost[], reference?: string | null, tax?: number | null, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
-  createExternalReferenceQR(reference: string, config?: XcooBeePayConfig): T | null;
+  createExternalReferenceQR(reference: string, config?: XcooBeePayConfig, qrConfig?: XcoobeePayQRConfig): T | null;
 
   /* tslint:enable:max-line-length */
 }
@@ -74,6 +76,10 @@ export type XcooBeePayConfig = {
   XcooBeeDeviceId?: string;
 };
 
+export type XcoobeePayQRConfig = {
+  size?: number;
+};
+
 /**
  *
  */
@@ -95,6 +101,11 @@ export type SecurePayItem = {
    */
   tip?: boolean;
 };
+
+/**
+ * Function that creates QR Code component based on parameters.
+ */
+export type QRRenderer = (value: string, qrConfig?: XcoobeePayQRConfig) => React.ReactElement | null;
 
 /**
  * Secure Pay logic sub-set.

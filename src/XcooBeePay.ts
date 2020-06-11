@@ -1,6 +1,6 @@
 import * as React from 'react';
-import QueryString from 'query-string';
 import { Buffer } from 'buffer';
+import QueryString from 'query-string';
 
 import {
   MAX_DATA_LENGTH,
@@ -8,13 +8,13 @@ import {
   MAX_SOURCE_LENGTH,
   MAX_SUB_ITEMS_AMOUNT,
   MAX_SUB_ITEMS_REF_LENGTH,
-  QRRenderer,
   SecurePayItemActions,
   SecurePayItemParams,
   SecurePayParams,
   WEB_SITE_URL
 } from './Shared';
 import {
+  QRRenderer,
   SecurePay,
   SecurePayItem,
   SecurePayLogic,
@@ -24,6 +24,7 @@ import {
   XcooBeePayBase,
   XcooBeePayConfig,
   XcooBeePayQR,
+  XcoobeePayQRConfig,
   XcooBeePayUrl
 } from './types';
 
@@ -372,12 +373,14 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    * @param reference
    * @param tax
    * @param config
+   * @param qrConfig
    */
   public createPayQR(
     amount: number,
     reference?: string | null,
     tax?: number | null,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createPayUrl(amount, reference, tax, config));
   }
@@ -388,12 +391,14 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    * @param reference
    * @param tax
    * @param config
+   * @param qrConfig
    */
   public createPayQRWithTip(
     amount: number,
     reference?: string | null,
     tax?: number | null,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createPayUrlWithTip(amount, reference, tax, config));
   }
@@ -404,12 +409,14 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    * @param reference
    * @param tax
    * @param config
+   * @param qrConfig
    */
   public createSingleItemQR(
     amount: number,
     reference?: string | null,
     tax?: number | null,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createSingleItemUrl(amount, reference, tax, config));
   }
@@ -421,13 +428,15 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    * @param reference
    * @param tax
    * @param config
+   * @param qrConfig
    */
   public createSingleSelectQR(
     amount: number,
     arrayOfItems: SecurePaySubItem[],
     reference?: string | null,
     tax?: number | null,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createSingleSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
@@ -439,13 +448,15 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    * @param reference
    * @param tax
    * @param config
+   * @param qrConfig
    */
   public createSingleSelectWithCostQR(
     amount: number,
     arrayOfItems: SecurePaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createSingleSelectWithCostUrl(amount, arrayOfItems, reference, tax, config));
   }
@@ -457,13 +468,15 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    * @param reference
    * @param tax
    * @param config
+   * @param qrConfig
    */
   public createMultiSelectQR(
     amount: number,
     arrayOfItems: SecurePaySubItem[],
     reference?: string | null,
     tax?: number | null,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createMultiSelectUrl(amount, arrayOfItems, reference, tax, config));
   }
@@ -475,13 +488,15 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    * @param reference
    * @param tax
    * @param config
+   * @param qrConfig
    */
   public createMultiSelectQRWithCost(
     amount: number,
     arrayOfItems: SecurePaySubItemWithCost[],
     reference?: string | null,
     tax?: number | null,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createMultiSelectUrlWithCost(amount, arrayOfItems, reference, tax, config));
   }
@@ -490,10 +505,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
    *
    * @param reference
    * @param config
+   * @param qrConfig
    */
   public createExternalReferenceQR(
     reference: string,
-    config?: XcooBeePayConfig
+    config?: XcooBeePayConfig,
+    qrConfig?: XcoobeePayQRConfig
   ): React.ReactElement | null {
     return this.renderQR(this.createExternalReferenceUrl(reference, config));
   }

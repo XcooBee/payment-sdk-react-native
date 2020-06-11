@@ -8,7 +8,8 @@
     "test": "jest ./",
     "testw": "jest ./ --watchAll",
     "compile": "tsc",
-    "build": "yarn test && yarn compile"
+    "build": "yarn && yarn compile && typedoc --out docs src",
+    "cleanup": "rm -rf node_modules yarn.lock dist docs"
   },
   "repository": {
     "type": "git",
@@ -44,7 +45,7 @@
   },
   "dependencies": {
     "buffer": "^5.6.0",
-    "query-string": "^6.13.0",
+    "query-string": "^6.13.1",
     "react-native-qrcode-svg": "^6.0.6"
   }
 }

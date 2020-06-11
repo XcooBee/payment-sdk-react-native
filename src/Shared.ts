@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * Quick Pay actions.
  */
@@ -42,8 +40,3 @@ export const MAX_SOURCE_LENGTH = 10;
 export const MAX_DATA_LENGTH = 1800;
 export const MAX_SUB_ITEMS_AMOUNT = 25;
 export const MAX_SUB_ITEMS_REF_LENGTH = 40;
-
-/**
- * Function that creates QR Code component based on parameters.
- */
-export type QRRenderer = (value: string, props?: any) => React.ReactElement | null;

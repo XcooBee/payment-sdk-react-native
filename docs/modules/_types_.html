@@ -81,6 +81,7 @@
 						<section class="tsd-index-section ">
 							<h3>Type aliases</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#qrrenderer" class="tsd-kind-icon">QRRenderer</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#securepay" class="tsd-kind-icon">Secure<wbr>Pay</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#securepayitem" class="tsd-kind-icon">Secure<wbr>Pay<wbr>Item</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#securepaylogic" class="tsd-kind-icon">Secure<wbr>Pay<wbr>Logic</a></li>
@@ -88,6 +89,7 @@
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#securepaysubitem" class="tsd-kind-icon">Secure<wbr>Pay<wbr>Sub<wbr>Item</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#securepaysubitemwithcost" class="tsd-kind-icon">Secure<wbr>Pay<wbr>Sub<wbr>Item<wbr>With<wbr>Cost</a></li>
 								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#xcoobeepayconfig" class="tsd-kind-icon">Xcoo<wbr>Bee<wbr>Pay<wbr>Config</a></li>
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="_types_.html#xcoobeepayqrconfig" class="tsd-kind-icon">Xcoobee<wbr>PayQRConfig</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,12 +98,51 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Type aliases</h2>
 				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="qrrenderer" class="tsd-anchor"></a>
+					<h3>QRRenderer</h3>
+					<div class="tsd-signature tsd-kind-icon">QRRenderer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, qrConfig<span class="tsd-signature-symbol">?: </span><a href="_types_.html#xcoobeepayqrconfig" class="tsd-signature-type">XcoobeePayQRConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">ReactElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L108">types.ts:108</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Function that creates QR Code component based on parameters.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-type-alias">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, qrConfig<span class="tsd-signature-symbol">?: </span><a href="_types_.html#xcoobeepayqrconfig" class="tsd-signature-type">XcoobeePayQRConfig</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReactElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>value: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> qrConfig: <a href="_types_.html#xcoobeepayqrconfig" class="tsd-signature-type">XcoobeePayQRConfig</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReactElement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
 					<a name="securepay" class="tsd-anchor"></a>
 					<h3>Secure<wbr>Pay</h3>
 					<div class="tsd-signature tsd-kind-icon">Secure<wbr>Pay<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>0-3<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>0-5<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>0-6<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>l<span class="tsd-signature-symbol">?: </span><a href="_types_.html#securepaylogic" class="tsd-signature-type">SecurePayLogic</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/7543742/src/types.ts#L146">types.ts:146</a></li>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L157">types.ts:157</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -153,7 +194,7 @@
 					<div class="tsd-signature tsd-kind-icon">Secure<wbr>Pay<wbr>Item<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>reference<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>tax<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span>tip<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/7543742/src/types.ts#L80">types.ts:80</a></li>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L86">types.ts:86</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -200,7 +241,7 @@
 					<div class="tsd-signature tsd-kind-icon">Secure<wbr>Pay<wbr>Logic<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">1</span><span class="tsd-signature-symbol">; </span>m<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>M<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">2</span><span class="tsd-signature-symbol">; </span>o<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">3</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">4</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><a href="_types_.html#securepaylogicsubset" class="tsd-signature-type">SecurePayLogicSubSet</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">5</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">6</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><a href="_types_.html#securepaylogicsubset" class="tsd-signature-type">SecurePayLogicSubSet</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">7</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">8</span><span class="tsd-signature-symbol">; </span>r<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">9</span><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">{ </span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">10</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/7543742/src/types.ts#L110">types.ts:110</a></li>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L121">types.ts:121</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -215,7 +256,7 @@
 					<div class="tsd-signature tsd-kind-icon">Secure<wbr>Pay<wbr>Logic<wbr>Sub<wbr>Set<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>0<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/7543742/src/types.ts#L102">types.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L113">types.ts:113</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -241,7 +282,7 @@
 					<div class="tsd-signature tsd-kind-icon">Secure<wbr>Pay<wbr>Sub<wbr>Item<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>reference<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/7543742/src/types.ts#L168">types.ts:168</a></li>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L179">types.ts:179</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -269,7 +310,7 @@
 					<div class="tsd-signature tsd-kind-icon">Secure<wbr>Pay<wbr>Sub<wbr>Item<wbr>With<wbr>Cost<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Required</span><span class="tsd-signature-symbol">&lt;</span><a href="_types_.html#securepaysubitem" class="tsd-signature-type">SecurePaySubItem</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>amount<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/7543742/src/types.ts#L178">types.ts:178</a></li>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L189">types.ts:189</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -284,7 +325,7 @@
 					<div class="tsd-signature tsd-kind-icon">Xcoo<wbr>Bee<wbr>Pay<wbr>Config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>XcooBeeDeviceId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>campaignId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>deviceId<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>formId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>source<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/7543742/src/types.ts#L52">types.ts:52</a></li>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L54">types.ts:54</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -335,6 +376,24 @@
 						</ul>
 					</div>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="xcoobeepayqrconfig" class="tsd-anchor"></a>
+					<h3>Xcoobee<wbr>PayQRConfig</h3>
+					<div class="tsd-signature tsd-kind-icon">Xcoobee<wbr>PayQRConfig<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span>size<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> }</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/XcooBee/payment-sdk-react-native/blob/31dec4f/src/types.ts#L79">types.ts:79</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> size<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+							</li>
+						</ul>
+					</div>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -375,6 +434,9 @@
 						<a href="../interfaces/_types_.xcoobeepayurl.html" class="tsd-kind-icon">Xcoo<wbr>Bee<wbr>Pay<wbr>Url</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#qrrenderer" class="tsd-kind-icon">QRRenderer</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_types_.html#securepay" class="tsd-kind-icon">Secure<wbr>Pay</a>
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
@@ -394,6 +456,9 @@
 					</li>
 					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
 						<a href="_types_.html#xcoobeepayconfig" class="tsd-kind-icon">Xcoo<wbr>Bee<wbr>Pay<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="_types_.html#xcoobeepayqrconfig" class="tsd-kind-icon">Xcoobee<wbr>PayQRConfig</a>
 					</li>
 				</ul>
 			</nav>
