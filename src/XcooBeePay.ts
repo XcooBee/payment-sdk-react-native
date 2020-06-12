@@ -151,15 +151,15 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param config
+   * The configuration function sets reuseable configuration for session. As an alternative you can provide a configuration object to each of your individual calls.
+   * @param config the global configuration object
    */
   public setSystemConfig(config: XcooBeePayConfig) {
     this.config = config;
   }
 
   /**
-   *
+   * Removes the existing global configuration from session.
    */
   public clearSystemConfig() {
     delete this.config;
@@ -167,11 +167,11 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param reference
-   * @param tax
-   * @param config
+   * Returns URL that can activate a single total payment. Existing items will be deleted. Only this item can be processed. If you use zero amount, the user can enter the amount for payment.
+   * @param amount total payment amount
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    */
   public createPayUrl(
     amount: number,
@@ -189,11 +189,11 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param reference
-   * @param tax
-   * @param config
+   * Returns a URL that can activate a total payment and predefined Tip calculator. This allows an additional Tip to be added to the total at checkout. Existing items in cart will be removed when this item is activated.
+   * @param amount the item main item amount to be charged. The tip will be calculated as percentage of this.
+   * @param reference the item description or reference for payment the description of the item
+   * @param tax the included tax of the item the included tax. 
+   * @param config the method specific configuration object override
    */
   public createPayUrlWithTip(
     amount: number,
@@ -212,11 +212,11 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param reference
-   * @param tax
-   * @param config
+   * Return URL that adds new item to eCommerce basket. 
+   * @param amount the item price of the item
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item the included tax of the item
+   * @param config the method specific configuration object override
    */
   public createSingleItemUrl(
     amount: number,
@@ -237,12 +237,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * Return URL to add a single item to cart. The item has multiple options of which one can be selected.
+   * @param amount the cost of the item
+   * @param arrayOfItems the array of option items
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    */
   public createSingleSelectUrl(
     amount: number,
@@ -265,12 +265,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * Return URL to add a single item to cart. The item has multiple options of which one can be selected. Each option can also add cost to item total.
+   * @param amount the amount of item without any options selected
+   * @param arrayOfItems the array of option items and cost
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    */
   public createSingleSelectWithCostUrl(
     amount: number,
@@ -293,12 +293,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * Return URL to add a single item to cart. The item has multiple options of which any can be selected.
+   * @param amount the cost of main item
+   * @param arrayOfItems the array of option items
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    */
   public createMultiSelectUrl(
     amount: number,
@@ -321,12 +321,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * Return URL to add a single item to cart. The item has multiple options of which any can be selected. Each option can also add cost to item total.
+   * @param amount the item total without any options selected
+   * @param arrayOfItems the array of option items and cost
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    */
   public createMultiSelectUrlWithCost(
     amount: number,
@@ -349,9 +349,10 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param reference
-   * @param config
+   * Create URL that uses external (XcooBee Hosted) definition for cost, image, and option logic. Obtain references from XcooBee.
+   * @param reference the external item reference. You will need to coordinate this with your XcooBee team
+   * @param config the method specific configuration object override
+   * 
    */
   public createExternalReferenceUrl(
     reference: string,
@@ -368,11 +369,11 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param reference
-   * @param tax
-   * @param config
+   * Returns QR that can activate a single total payment. Existing items will be deleted. Only this item can be processed. If you use zero amount, the user can enter the amount for payment.
+   * @param amount the total to be paid
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createPayQR(
@@ -386,11 +387,11 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param amount
-   * @param reference
-   * @param tax
-   * @param config
+   * Returns a QR that can activate a total payment and predefined Tip calculator. This allows an additional Tip to be added to the total at checkout. Existing items in cart will be removed when this item is activated.
+   * @param amount the item main item amount to be charged. The tip will be calculated as percentage of this.
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createPayQRWithTip(
@@ -404,11 +405,11 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
+   * Return QR that adds new item to eCommerce basket.
    * @param amount
-   * @param reference
-   * @param tax
-   * @param config
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createSingleItemQR(
@@ -422,12 +423,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
+   * Return QR to add a single item to cart. The item has multiple options of which one can be selected.
    * @param amount
    * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createSingleSelectQR(
@@ -442,12 +443,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
+   * Return QR to add a single item to cart. The item has multiple options of which one can be selected. Each option can also add cost to item total.
    * @param amount
    * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createSingleSelectWithCostQR(
@@ -462,12 +463,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
+   * Return QR to add a single item to cart. The item has multiple options of which any can be selected.
    * @param amount
    * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createMultiSelectQR(
@@ -482,12 +483,12 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
+   * Return QR to add a single item to cart. The item has multiple options of which any can be selected. Each option can also add cost to item total.
    * @param amount
    * @param arrayOfItems
-   * @param reference
-   * @param tax
-   * @param config
+   * @param reference the item description or reference for payment
+   * @param tax the included tax of the item
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createMultiSelectQRWithCost(
@@ -502,9 +503,9 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
   }
 
   /**
-   *
-   * @param reference
-   * @param config
+   * Create URL that uses external (XcooBee Hosted) definition for cost, image, and option logic. Obtain references from XcooBee.
+   * @param reference the item description or reference for payment
+   * @param config the method specific configuration object override
    * @param qrConfig
    */
   public createExternalReferenceQR(
