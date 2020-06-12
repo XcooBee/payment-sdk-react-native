@@ -42,3 +42,5 @@ export const MAX_SOURCE_LENGTH = 10;
 export const MAX_SUB_ITEMS_AMOUNT = 25;
 export const MAX_SUB_ITEMS_REF_LENGTH = 40;
 export const WEB_SITE_URL = 'https://app.xcoobee.net';
+export const REGEXP_CAMPAIGN_ID = /^[a-z\\d]{3}\\.[a-z\\d]{8,10}$/;
+export const REGEXP_FORM_ID = /^[a-z\\d]{3,5}$/;

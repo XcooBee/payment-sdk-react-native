@@ -9,7 +9,7 @@ import {
   MAX_REFERENCE_LENGTH,
   MAX_SOURCE_LENGTH,
   MAX_SUB_ITEMS_AMOUNT,
-  MAX_SUB_ITEMS_REF_LENGTH,
+  MAX_SUB_ITEMS_REF_LENGTH, REGEXP_CAMPAIGN_ID, REGEXP_FORM_ID,
   SecurePayItemActions,
   SecurePayItemParams,
   SecurePayParams,
@@ -45,10 +45,14 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
 
     if (!config.campaignId) {
       throw new Error('Campaign id is not configured. Invoke setConfig() before using functions.');
+    } else if (!config.campaignId.match(REGEXP_CAMPAIGN_ID)) {
+      console.warn('Campaign id has incorrect format.');
     }
 
     if (!config.formId) {
       throw new Error('Form id is not configured. Invoke setConfig() before using functions.');
+    } else if (!config.campaignId.match(REGEXP_FORM_ID)) {
+      console.warn('Form id has incorrect format.');
     }
 
     return true;
@@ -60,19 +64,17 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     tax?: number | null;
     logic?: SecurePayLogic[];
   }): SecurePay {
-    const normalizedAmount = params.amount !== undefined
-      ? params.amount > MAX_AMOUNT
-        ? MAX_AMOUNT
-        : params.amount
-      : undefined;
+    if ((params.amount || 0) > MAX_AMOUNT) {
+      throw new Error(`Amount parameter should be less than ${MAX_AMOUNT}`);
+    }
 
-    const normalizedReference = params.reference !== undefined && params.reference !== null
-      ? params.reference.substr(MAX_REFERENCE_LENGTH)
-      : undefined;
+    if ((params.reference || '').length > MAX_REFERENCE_LENGTH) {
+      throw new Error(`Reference parameter should be less than ${MAX_REFERENCE_LENGTH}`);
+    }
 
     return Object.entries({
-      [SecurePayItemParams.Amount]: normalizedAmount,
-      [SecurePayItemParams.Reference]: normalizedReference,
+      [SecurePayItemParams.Amount]: params.amount,
+      [SecurePayItemParams.Reference]: params.reference,
       [SecurePayItemParams.Tax]: params.tax,
       [SecurePayItemParams.Logic]: params.logic
     }).reduce((acc, item) => {
