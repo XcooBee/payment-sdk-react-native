@@ -28,7 +28,7 @@
 
 Ƭ **QRRenderer**: *function*
 
-*Defined in [types.ts:108](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L108)*
+*Defined in [types.ts:108](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L108)*
 
 Function that creates QR Code component based on parameters.
 
@@ -49,7 +49,7 @@ ___
 
 Ƭ **SecurePay**: *object*
 
-*Defined in [types.ts:157](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L157)*
+*Defined in [types.ts:157](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L157)*
 
 Secure Pay item.
 
@@ -69,7 +69,7 @@ ___
 
 Ƭ **SecurePayItem**: *object*
 
-*Defined in [types.ts:86](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L86)*
+*Defined in [types.ts:86](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L86)*
 
 #### Type declaration:
 
@@ -87,7 +87,7 @@ ___
 
 Ƭ **SecurePayLogic**: *object | object | object | object | object | object | object | object | object | object*
 
-*Defined in [types.ts:121](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L121)*
+*Defined in [types.ts:121](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L121)*
 
 Secure Pay logic item.
 
@@ -97,7 +97,7 @@ ___
 
 Ƭ **SecurePayLogicSubSet**: *object*
 
-*Defined in [types.ts:113](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L113)*
+*Defined in [types.ts:113](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L113)*
 
 Secure Pay logic sub-set.
 
@@ -113,7 +113,7 @@ ___
 
 Ƭ **SecurePaySubItem**: *object*
 
-*Defined in [types.ts:179](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L179)*
+*Defined in [types.ts:179](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L179)*
 
 Quick pay sub item.
 
@@ -127,7 +127,7 @@ ___
 
 Ƭ **SecurePaySubItemWithCost**: *Required‹[SecurePaySubItem](_types_.md#securepaysubitem)› & object*
 
-*Defined in [types.ts:189](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L189)*
+*Defined in [types.ts:189](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L189)*
 
 Quick pay sub item with cost.
 
@@ -137,7 +137,7 @@ ___
 
 Ƭ **XcooBeePayConfig**: *object*
 
-*Defined in [types.ts:54](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L54)*
+*Defined in [types.ts:54](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L54)*
 
 #### Type declaration:
 
@@ -157,7 +157,7 @@ ___
 
 Ƭ **XcoobeePayQRConfig**: *object*
 
-*Defined in [types.ts:79](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/types.ts#L79)*
+*Defined in [types.ts:79](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L79)*
 
 #### Type declaration:
 

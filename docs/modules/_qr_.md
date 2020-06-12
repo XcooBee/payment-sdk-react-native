@@ -14,7 +14,7 @@
 
 ▸ **XcooBeePayQR**(`value`: string, `qrConfig`: undefined | object): *ReactElement*
 
-*Defined in [QR.tsx:12](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/QR.tsx#L12)*
+*Defined in [QR.tsx:12](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/QR.tsx#L12)*
 
 Creates QRCode component with firm logo.
 

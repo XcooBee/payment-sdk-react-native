@@ -19,7 +19,7 @@ Secure Pay url params
 
 • **Amount**: = "0-3"
 
-*Defined in [Shared.ts:21](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L21)*
+*Defined in [Shared.ts:21](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L21)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **Logic**: = "l"
 
-*Defined in [Shared.ts:24](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L24)*
+*Defined in [Shared.ts:24](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L24)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **Reference**: = "0-6"
 
-*Defined in [Shared.ts:23](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L23)*
+*Defined in [Shared.ts:23](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L23)*
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 • **Tax**: = "0-5"
 
-*Defined in [Shared.ts:22](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L22)*
+*Defined in [Shared.ts:22](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L22)*

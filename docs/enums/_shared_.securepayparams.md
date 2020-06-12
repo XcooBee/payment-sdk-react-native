@@ -17,7 +17,7 @@
 
 • **Data**: = "d"
 
-*Defined in [Shared.ts:31](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L31)*
+*Defined in [Shared.ts:31](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L31)*
 
 ___
 
@@ -25,7 +25,7 @@ ___
 
 • **ExternalDeviceId**: = "ed"
 
-*Defined in [Shared.ts:34](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L34)*
+*Defined in [Shared.ts:34](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L34)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **Source**: = "s"
 
-*Defined in [Shared.ts:32](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L32)*
+*Defined in [Shared.ts:32](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L32)*
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 • **XcooBeeDeviceId**: = "did"
 
-*Defined in [Shared.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/212c279/src/Shared.ts#L33)*
+*Defined in [Shared.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L33)*
