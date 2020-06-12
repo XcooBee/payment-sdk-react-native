@@ -56,7 +56,7 @@
 
 \+ **new XcooBeePaySDK**(`qrRenderer?`: [QRRenderer](../modules/_types_.md#qrrenderer)): *[XcooBeePaySDK](_xcoobeepay_.xcoobeepaysdk.md)*
 
-*Defined in [XcooBeePay.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L33)*
+*Defined in [XcooBeePay.ts:35](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L35)*
 
 **Parameters:**
 
@@ -72,7 +72,7 @@ Name | Type |
 
 • **config**? : *[XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)*
 
-*Defined in [XcooBeePay.ts:33](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L33)*
+*Defined in [XcooBeePay.ts:35](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L35)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **renderQR**: *[QRRenderer](../modules/_types_.md#qrrenderer)*
 
-*Defined in [XcooBeePay.ts:32](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L32)*
+*Defined in [XcooBeePay.ts:34](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L34)*
 
 ## Methods
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **checkConfig**(`config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *boolean*
 
-*Defined in [XcooBeePay.ts:39](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L39)*
+*Defined in [XcooBeePay.ts:41](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L41)*
 
 **Parameters:**
 
@@ -106,7 +106,7 @@ ___
 
 *Implementation of [XcooBeePayBase](../interfaces/_types_.xcoobeepaybase.md)*
 
-*Defined in [XcooBeePay.ts:164](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L164)*
+*Defined in [XcooBeePay.ts:177](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L177)*
 
 Removes the existing global configuration from session.
 
@@ -120,9 +120,10 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:511](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L511)*
+*Defined in [XcooBeePay.ts:534](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L534)*
 
-Create URL that uses external (XcooBee Hosted) definition for cost, image, and option logic. Obtain references from XcooBee.
+Create URL that uses external (XcooBee Hosted) definition for cost, image, and option logic. Obtain references from
+XcooBee.
 
 **Parameters:**
 
@@ -142,9 +143,10 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:357](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L357)*
+*Defined in [XcooBeePay.ts:375](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L375)*
 
-Create URL that uses external (XcooBee Hosted) definition for cost, image, and option logic. Obtain references from XcooBee.
+Create URL that uses external (XcooBee Hosted) definition for cost, image, and option logic. Obtain references from
+XcooBee.
 
 **Parameters:**
 
@@ -163,7 +165,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:474](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L474)*
+*Defined in [XcooBeePay.ts:495](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L495)*
 
 Return QR to add a single item to cart. The item has multiple options of which any can be selected.
 
@@ -188,9 +190,10 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:494](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L494)*
+*Defined in [XcooBeePay.ts:516](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L516)*
 
-Return QR to add a single item to cart. The item has multiple options of which any can be selected. Each option can also add cost to item total.
+Return QR to add a single item to cart. The item has multiple options of which any can be selected. Each option can
+also add cost to item total.
 
 **Parameters:**
 
@@ -213,7 +216,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:303](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L303)*
+*Defined in [XcooBeePay.ts:319](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L319)*
 
 Return URL to add a single item to cart. The item has multiple options of which any can be selected.
 
@@ -237,9 +240,10 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:331](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L331)*
+*Defined in [XcooBeePay.ts:348](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L348)*
 
-Return URL to add a single item to cart. The item has multiple options of which any can be selected. Each option can also add cost to item total.
+Return URL to add a single item to cart. The item has multiple options of which any can be selected. Each option
+can also add cost to item total.
 
 **Parameters:**
 
@@ -261,9 +265,10 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:379](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L379)*
+*Defined in [XcooBeePay.ts:398](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L398)*
 
-Returns QR that can activate a single total payment. Existing items will be deleted. Only this item can be processed. If you use zero amount, the user can enter the amount for payment.
+Returns QR that can activate a single total payment. Existing items will be deleted. Only this item can be
+processed. If you use zero amount, the user can enter the amount for payment.
 
 **Parameters:**
 
@@ -285,9 +290,10 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:397](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L397)*
+*Defined in [XcooBeePay.ts:417](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L417)*
 
-Returns a QR that can activate a total payment and predefined Tip calculator. This allows an additional Tip to be added to the total at checkout. Existing items in cart will be removed when this item is activated.
+Returns a QR that can activate a total payment and predefined Tip calculator. This allows an additional Tip to be
+added to the total at checkout. Existing items in cart will be removed when this item is activated.
 
 **Parameters:**
 
@@ -309,9 +315,10 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:176](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L176)*
+*Defined in [XcooBeePay.ts:190](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L190)*
 
-Returns URL that can activate a single total payment. Existing items will be deleted. Only this item can be processed. If you use zero amount, the user can enter the amount for payment.
+Returns URL that can activate a single total payment. Existing items will be deleted. Only this item can be
+processed. If you use zero amount, the user can enter the amount for payment.
 
 **Parameters:**
 
@@ -332,9 +339,10 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:198](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L198)*
+*Defined in [XcooBeePay.ts:213](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L213)*
 
-Returns a URL that can activate a total payment and predefined Tip calculator. This allows an additional Tip to be added to the total at checkout. Existing items in cart will be removed when this item is activated.
+Returns a URL that can activate a total payment and predefined Tip calculator. This allows an additional Tip to be
+added to the total at checkout. Existing items in cart will be removed when this item is activated.
 
 **Parameters:**
 
@@ -355,7 +363,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:415](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L415)*
+*Defined in [XcooBeePay.ts:435](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L435)*
 
 Return QR that adds new item to eCommerce basket.
 
@@ -379,7 +387,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:221](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L221)*
+*Defined in [XcooBeePay.ts:236](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L236)*
 
 Return URL that adds new item to eCommerce basket.
 
@@ -402,7 +410,7 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:434](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L434)*
+*Defined in [XcooBeePay.ts:454](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L454)*
 
 Return QR to add a single item to cart. The item has multiple options of which one can be selected.
 
@@ -427,7 +435,7 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:247](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L247)*
+*Defined in [XcooBeePay.ts:262](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L262)*
 
 Return URL to add a single item to cart. The item has multiple options of which one can be selected.
 
@@ -451,9 +459,10 @@ ___
 
 *Implementation of [XcooBeePayQR](../interfaces/_types_.xcoobeepayqr.md)*
 
-*Defined in [XcooBeePay.ts:454](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L454)*
+*Defined in [XcooBeePay.ts:475](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L475)*
 
-Return QR to add a single item to cart. The item has multiple options of which one can be selected. Each option can also add cost to item total.
+Return QR to add a single item to cart. The item has multiple options of which one can be selected. Each option can
+also add cost to item total.
 
 **Parameters:**
 
@@ -476,9 +485,10 @@ ___
 
 *Implementation of [XcooBeePayUrl](../interfaces/_types_.xcoobeepayurl.md)*
 
-*Defined in [XcooBeePay.ts:275](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L275)*
+*Defined in [XcooBeePay.ts:291](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L291)*
 
-Return URL to add a single item to cart. The item has multiple options of which one can be selected. Each option can also add cost to item total.
+Return URL to add a single item to cart. The item has multiple options of which one can be selected. Each option
+can also add cost to item total.
 
 **Parameters:**
 
@@ -498,7 +508,7 @@ ___
 
 ▸ **makePayUrl**(`securePay`: [SecurePay](../modules/_types_.md#securepay)[], `forcedConfig?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [XcooBeePay.ts:97](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L97)*
+*Defined in [XcooBeePay.ts:109](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L109)*
 
 **Parameters:**
 
@@ -515,7 +525,7 @@ ___
 
 ▸ **makeSecurePayItem**(`params`: object): *[SecurePay](../modules/_types_.md#securepay)*
 
-*Defined in [XcooBeePay.ts:55](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L55)*
+*Defined in [XcooBeePay.ts:57](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L57)*
 
 **Parameters:**
 
@@ -536,7 +546,7 @@ ___
 
 ▸ **makeSecurePayItemTotal**(`params`: [SecurePayItem](../modules/_types_.md#securepayitem)): *[SecurePay](../modules/_types_.md#securepay)[]*
 
-*Defined in [XcooBeePay.ts:78](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L78)*
+*Defined in [XcooBeePay.ts:90](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L90)*
 
 **Parameters:**
 
@@ -552,7 +562,7 @@ ___
 
 ▸ **mapSubItems**(`items`: [SecurePaySubItem](../modules/_types_.md#securepaysubitem)[]): *string[]*
 
-*Defined in [XcooBeePay.ts:140](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L140)*
+*Defined in [XcooBeePay.ts:152](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L152)*
 
 **Parameters:**
 
@@ -568,7 +578,7 @@ ___
 
 ▸ **mapSubItemsWithCost**(`items`: [SecurePaySubItemWithCost](../modules/_types_.md#securepaysubitemwithcost)[]): *[SecurePayLogicSubSet](../modules/_types_.md#securepaylogicsubset)[]*
 
-*Defined in [XcooBeePay.ts:145](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L145)*
+*Defined in [XcooBeePay.ts:157](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L157)*
 
 **Parameters:**
 
@@ -586,9 +596,10 @@ ___
 
 *Implementation of [XcooBeePayBase](../interfaces/_types_.xcoobeepaybase.md)*
 
-*Defined in [XcooBeePay.ts:157](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/XcooBeePay.ts#L157)*
+*Defined in [XcooBeePay.ts:170](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/XcooBeePay.ts#L170)*
 
-The configuration function sets reuseable configuration for session. As an alternative you can provide a configuration object to each of your individual calls.
+The configuration function sets reuseable configuration for session. As an alternative you can provide a
+configuration object to each of your individual calls.
 
 **Parameters:**
 

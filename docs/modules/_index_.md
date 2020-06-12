@@ -6,8 +6,10 @@
 
 ### References
 
+* [MAX_AMOUNT](_index_.md#max_amount)
 * [MAX_DATA_LENGTH](_index_.md#max_data_length)
 * [MAX_DEVICE_ID_LENGTH](_index_.md#max_device_id_length)
+* [MAX_REFERENCE_LENGTH](_index_.md#max_reference_length)
 * [MAX_SOURCE_LENGTH](_index_.md#max_source_length)
 * [MAX_SUB_ITEMS_AMOUNT](_index_.md#max_sub_items_amount)
 * [MAX_SUB_ITEMS_REF_LENGTH](_index_.md#max_sub_items_ref_length)
@@ -23,6 +25,12 @@
 
 ## References
 
+###  MAX_AMOUNT
+
+• **MAX_AMOUNT**:
+
+___
+
 ###  MAX_DATA_LENGTH
 
 • **MAX_DATA_LENGTH**:
@@ -32,6 +40,12 @@ ___
 ###  MAX_DEVICE_ID_LENGTH
 
 • **MAX_DEVICE_ID_LENGTH**:
+
+___
+
+###  MAX_REFERENCE_LENGTH
+
+• **MAX_REFERENCE_LENGTH**:
 
 ___
 
@@ -87,6 +101,6 @@ ___
 
 • **XcooBeePay**: *[XcooBeePaySDK](../classes/_xcoobeepay_.xcoobeepaysdk.md)‹›* = new XcooBeePaySDK(XcooBeePayQR)
 
-*Defined in [index.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/index.ts#L7)*
+*Defined in [index.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/index.ts#L7)*
 
 Single instance of XcooBeePaySDK.

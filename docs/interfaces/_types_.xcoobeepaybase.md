@@ -23,7 +23,7 @@
 
 ▸ **clearSystemConfig**(): *void*
 
-*Defined in [types.ts:6](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L6)*
+*Defined in [types.ts:6](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L6)*
 
 **Returns:** *void*
 
@@ -33,7 +33,7 @@ ___
 
 ▸ **setSystemConfig**(`config`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *void*
 
-*Defined in [types.ts:4](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L4)*
+*Defined in [types.ts:4](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L4)*
 
 **Parameters:**
 

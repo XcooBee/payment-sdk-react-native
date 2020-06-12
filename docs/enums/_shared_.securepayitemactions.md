@@ -25,7 +25,7 @@ Quick Pay actions.
 
 • **addMaxOrFixed**: = 2
 
-*Defined in [Shared.ts:6](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L6)*
+*Defined in [Shared.ts:6](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L6)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **addMinOrFixed**: = 1
 
-*Defined in [Shared.ts:5](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L5)*
+*Defined in [Shared.ts:5](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L5)*
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **addSubCheckbox**: = 5
 
-*Defined in [Shared.ts:9](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L9)*
+*Defined in [Shared.ts:9](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L9)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **addSubCheckboxWithExtraCost**: = 6
 
-*Defined in [Shared.ts:10](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L10)*
+*Defined in [Shared.ts:10](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L10)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **addSubRadio**: = 3
 
-*Defined in [Shared.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L7)*
+*Defined in [Shared.ts:7](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L7)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 • **addSubRadioWithExtraCost**: = 4
 
-*Defined in [Shared.ts:8](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L8)*
+*Defined in [Shared.ts:8](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L8)*
 
 ___
 
@@ -73,7 +73,7 @@ ___
 
 • **externalPricing**: = 8
 
-*Defined in [Shared.ts:12](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L12)*
+*Defined in [Shared.ts:12](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L12)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 • **setTip**: = 7
 
-*Defined in [Shared.ts:11](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L11)*
+*Defined in [Shared.ts:11](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L11)*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 • **setTotal**: = 10
 
-*Defined in [Shared.ts:14](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L14)*
+*Defined in [Shared.ts:14](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L14)*
 
 ___
 
@@ -97,4 +97,4 @@ ___
 
 • **userEntry**: = 9
 
-*Defined in [Shared.ts:13](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L13)*
+*Defined in [Shared.ts:13](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L13)*

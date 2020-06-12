@@ -33,7 +33,7 @@
 
 ▸ **createExternalReferenceQR**(`reference`: string, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:46](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L46)*
+*Defined in [types.ts:46](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L46)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ ___
 
 ▸ **createMultiSelectQR**(`amount`: number, `arrayOfItems`: [SecurePaySubItem](../modules/_types_.md#securepaysubitem)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:42](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L42)*
+*Defined in [types.ts:42](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L42)*
 
 **Parameters:**
 
@@ -72,7 +72,7 @@ ___
 
 ▸ **createMultiSelectQRWithCost**(`amount`: number, `arrayOfItems`: [SecurePaySubItemWithCost](../modules/_types_.md#securepaysubitemwithcost)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:44](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L44)*
+*Defined in [types.ts:44](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L44)*
 
 **Parameters:**
 
@@ -93,7 +93,7 @@ ___
 
 ▸ **createPayQR**(`amount`: number, `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:32](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L32)*
+*Defined in [types.ts:32](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L32)*
 
 **Parameters:**
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **createPayQRWithTip**(`amount`: number, `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:34](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L34)*
+*Defined in [types.ts:34](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L34)*
 
 **Parameters:**
 
@@ -133,7 +133,7 @@ ___
 
 ▸ **createSingleItemQR**(`amount`: number, `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:36](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L36)*
+*Defined in [types.ts:36](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L36)*
 
 **Parameters:**
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **createSingleSelectQR**(`amount`: number, `arrayOfItems`: [SecurePaySubItem](../modules/_types_.md#securepaysubitem)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:38](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L38)*
+*Defined in [types.ts:38](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L38)*
 
 **Parameters:**
 
@@ -174,7 +174,7 @@ ___
 
 ▸ **createSingleSelectWithCostQR**(`amount`: number, `arrayOfItems`: [SecurePaySubItemWithCost](../modules/_types_.md#securepaysubitemwithcost)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig), `qrConfig?`: [XcoobeePayQRConfig](../modules/_types_.md#xcoobeepayqrconfig)): *T | null*
 
-*Defined in [types.ts:40](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L40)*
+*Defined in [types.ts:40](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L40)*
 
 **Parameters:**
 

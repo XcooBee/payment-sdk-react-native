@@ -29,7 +29,7 @@
 
 ▸ **createExternalReferenceUrl**(`reference`: string, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:25](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L25)*
+*Defined in [types.ts:25](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L25)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **createMultiSelectUrl**(`amount`: number, `arrayOfItems`: [SecurePaySubItem](../modules/_types_.md#securepaysubitem)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:21](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L21)*
+*Defined in [types.ts:21](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L21)*
 
 **Parameters:**
 
@@ -66,7 +66,7 @@ ___
 
 ▸ **createMultiSelectUrlWithCost**(`amount`: number, `arrayOfItems`: [SecurePaySubItemWithCost](../modules/_types_.md#securepaysubitemwithcost)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:23](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L23)*
+*Defined in [types.ts:23](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L23)*
 
 **Parameters:**
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **createPayUrl**(`amount`: number, `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:11](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L11)*
+*Defined in [types.ts:11](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L11)*
 
 **Parameters:**
 
@@ -105,7 +105,7 @@ ___
 
 ▸ **createPayUrlWithTip**(`amount`: number, `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:13](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L13)*
+*Defined in [types.ts:13](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L13)*
 
 **Parameters:**
 
@@ -124,7 +124,7 @@ ___
 
 ▸ **createSingleItemUrl**(`amount`: number, `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:15](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L15)*
+*Defined in [types.ts:15](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L15)*
 
 **Parameters:**
 
@@ -143,7 +143,7 @@ ___
 
 ▸ **createSingleSelectUrl**(`amount`: number, `arrayOfItems`: [SecurePaySubItem](../modules/_types_.md#securepaysubitem)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:17](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L17)*
+*Defined in [types.ts:17](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L17)*
 
 **Parameters:**
 
@@ -163,7 +163,7 @@ ___
 
 ▸ **createSingleSelectWithCostUrl**(`amount`: number, `arrayOfItems`: [SecurePaySubItemWithCost](../modules/_types_.md#securepaysubitemwithcost)[], `reference?`: string | null, `tax?`: number | null, `config?`: [XcooBeePayConfig](../modules/_types_.md#xcoobeepayconfig)): *string*
 
-*Defined in [types.ts:19](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/types.ts#L19)*
+*Defined in [types.ts:19](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/types.ts#L19)*
 
 **Parameters:**
 

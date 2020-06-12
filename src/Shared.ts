@@ -34,9 +34,11 @@ export enum SecurePayParams {
   ExternalDeviceId = 'ed',
 }
 
-export const WEB_SITE_URL = 'https://app.xcoobee.net';
-export const MAX_DEVICE_ID_LENGTH = 200;
-export const MAX_SOURCE_LENGTH = 10;
+export const MAX_AMOUNT = 9999.99;
 export const MAX_DATA_LENGTH = 1800;
+export const MAX_DEVICE_ID_LENGTH = 200;
+export const MAX_REFERENCE_LENGTH = 40;
+export const MAX_SOURCE_LENGTH = 10;
 export const MAX_SUB_ITEMS_AMOUNT = 25;
 export const MAX_SUB_ITEMS_REF_LENGTH = 40;
+export const WEB_SITE_URL = 'https://app.xcoobee.net';

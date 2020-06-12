@@ -12,8 +12,10 @@
 
 ### Variables
 
+* [MAX_AMOUNT](_shared_.md#const-max_amount)
 * [MAX_DATA_LENGTH](_shared_.md#const-max_data_length)
 * [MAX_DEVICE_ID_LENGTH](_shared_.md#const-max_device_id_length)
+* [MAX_REFERENCE_LENGTH](_shared_.md#const-max_reference_length)
 * [MAX_SOURCE_LENGTH](_shared_.md#const-max_source_length)
 * [MAX_SUB_ITEMS_AMOUNT](_shared_.md#const-max_sub_items_amount)
 * [MAX_SUB_ITEMS_REF_LENGTH](_shared_.md#const-max_sub_items_ref_length)
@@ -21,11 +23,19 @@
 
 ## Variables
 
+### `Const` MAX_AMOUNT
+
+• **MAX_AMOUNT**: *9999.99* = 9999.99
+
+*Defined in [Shared.ts:37](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L37)*
+
+___
+
 ### `Const` MAX_DATA_LENGTH
 
 • **MAX_DATA_LENGTH**: *1800* = 1800
 
-*Defined in [Shared.ts:40](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L40)*
+*Defined in [Shared.ts:38](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L38)*
 
 ___
 
@@ -33,7 +43,15 @@ ___
 
 • **MAX_DEVICE_ID_LENGTH**: *200* = 200
 
-*Defined in [Shared.ts:38](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L38)*
+*Defined in [Shared.ts:39](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L39)*
+
+___
+
+### `Const` MAX_REFERENCE_LENGTH
+
+• **MAX_REFERENCE_LENGTH**: *40* = 40
+
+*Defined in [Shared.ts:40](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L40)*
 
 ___
 
@@ -41,7 +59,7 @@ ___
 
 • **MAX_SOURCE_LENGTH**: *10* = 10
 
-*Defined in [Shared.ts:39](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L39)*
+*Defined in [Shared.ts:41](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L41)*
 
 ___
 
@@ -49,7 +67,7 @@ ___
 
 • **MAX_SUB_ITEMS_AMOUNT**: *25* = 25
 
-*Defined in [Shared.ts:41](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L41)*
+*Defined in [Shared.ts:42](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L42)*
 
 ___
 
@@ -57,7 +75,7 @@ ___
 
 • **MAX_SUB_ITEMS_REF_LENGTH**: *40* = 40
 
-*Defined in [Shared.ts:42](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L42)*
+*Defined in [Shared.ts:43](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L43)*
 
 ___
 
@@ -65,4 +83,4 @@ ___
 
 • **WEB_SITE_URL**: *"https://app.xcoobee.net"* = "https://app.xcoobee.net"
 
-*Defined in [Shared.ts:37](https://github.com/XcooBee/payment-sdk-react-native/blob/bd7e09a/src/Shared.ts#L37)*
+*Defined in [Shared.ts:44](https://github.com/XcooBee/payment-sdk-react-native/blob/8748550/src/Shared.ts#L44)*
