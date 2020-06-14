@@ -12,7 +12,13 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text>Please pay with XcooBee application.</Text>
+      <Text
+        style={{
+          marginBottom: 20
+        }}
+      >
+        Please pay with XcooBee application.
+      </Text>
       {XcooBeePayQR}
     </View>
   );
