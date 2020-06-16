@@ -2,7 +2,6 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import XcooBeePaySDK from '@xcoobee/react-native-xcoobee-payment-sdk';
 
-
 // TODO: replace with actual values from XcooBee Payment Project
 // Open your payment project in edit mode and review the summary screen
 XcooBeePaySDK.setSystemConfig({
@@ -15,11 +14,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text  style={{
+      <Text
+        style={{
           marginBottom: 20
-        }}>Please scan and pay</Text>
+        }}
+      >
+        Please scan and pay
+      </Text>
       {XcooBeePayQR}
-      <Text>powered by XcooBee</Text>
+      <Text>
+        powered by XcooBee
+      </Text>
     </View>
   );
 }
