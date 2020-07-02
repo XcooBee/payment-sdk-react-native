@@ -138,7 +138,7 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     }
 
     if ((source || '').length > MAX_SOURCE_LENGTH) {
-      console.warn('Source parameter is bigger than', MAX_DEVICE_ID_LENGTH);
+      console.warn('Source parameter is bigger than', MAX_SOURCE_LENGTH);
     }
 
     return QueryString.stringifyUrl({

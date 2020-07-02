@@ -9,6 +9,9 @@ So you will also need the Expo command line tools.
 
 `yarn install expo-cli --global`
 
+A more up-to-date example is maintained in this repo:
+[https://github.com/XcooBee/example-payment-sdk-react-native](https://github.com/XcooBee/example-payment-sdk-react-native)
+
 ## SDK
 
 Information about SDK and its API is available in SDK Repo.
