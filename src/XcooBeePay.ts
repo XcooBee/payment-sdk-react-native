@@ -244,10 +244,7 @@ export class XcooBeePaySDK implements XcooBeePayBase, XcooBeePayUrl, XcooBeePayQ
     const securePayItem = this.makeSecurePayItem({
       amount,
       reference,
-      tax,
-      logic: [{
-        a: SecurePayItemActions.userEntry
-      }]
+      tax
     });
 
     return this.makePayUrl([securePayItem], config);
